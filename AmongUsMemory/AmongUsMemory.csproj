@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="Cheese.cs" />
     <Compile Include="EngineOffset.cs" />
+    <Compile Include="Methods.cs" />
     <Compile Include="PlayerData.cs" />
     <Compile Include="ProcessMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

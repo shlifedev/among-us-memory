@@ -18,6 +18,7 @@ namespace HamsterCheese.AmongUsMemory
     
             if (state)
             {
+                Methods.Init();
                 Process proc = Process.GetProcessesByName("Among Us")[0];
                 ProcessMemory = new ProcessMemory(proc);
                 ProcessMemory.Open(ProcessAccess.AllAccess);

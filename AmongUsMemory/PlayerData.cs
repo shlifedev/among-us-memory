@@ -88,37 +88,10 @@ namespace HamsterCheese.AmongUsMemory
             {
                 if (m_pInfo == null)
                 {
-                    if (PlayerControl_GetData_Offset == IntPtr.Zero)
-                    {
-                        var aobScan = Cheese.mem.AoBScan(Pattern.PlayerControl_GetData);
-
-                        aobScan.Wait();
-                        if (aobScan.Result.Count() == 1)
-                            PlayerControl_GetData_Offset = (IntPtr)aobScan.Result.First();
-                    }
-
-                    var scanTask = PlayerControl_GetData_Offset;
-
-
-                    if (PlayerControl_GetData_Offset != IntPtr.Zero)
-                    {
-                        var ptr = PlayerControl_GetData_Offset;
-                        var playerInfoAddress = Cheese.ProcessMemory.CallFunction(ptr, this.offset_ptr);
-                        playerInfoOffset = playerInfoAddress.GetAddress();
-                        playerInfoOffset_ptr = (IntPtr)playerInfoAddress;
-
-
-                        PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
-                        this.m_pInfo = pInfo;
-                    }
-                }
-                else
-                {
-                    PlayerInfo pInfo =  Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
-                    this.m_pInfo = pInfo;
-                }
-
-
+                    playerInfoOffset = Methods.Call_PlayerControl_GetData(this.offset_ptr).GetAddress();
+                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
+                    m_pInfo = pInfo;
+                } 
                 return m_pInfo;
             }
         }
