@@ -1,16 +1,6 @@
-# AmongUsPublicCheese 
- ▼ my private cheat
- ![](https://github.com/shlifedev/AmongUsPublic/blob/master/111111111111111.PNG) 
- https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
- 
-## Source Code
+# AmongUsMemory
 
- I do not share the cheat source code.  
- However, I share Among us Memory Reader.
- 
- 
-
-### How to Use
+## How to Use
  
  ```cs
  
@@ -31,5 +21,14 @@
             }
  ```
 
+
+## Example Cheat
+
+ this is my private cheat
+ ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG) 
+ https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
+ 
+ 
 Just use it for study purposes only.
+
 
