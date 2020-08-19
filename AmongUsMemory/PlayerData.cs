@@ -16,7 +16,17 @@ namespace HamsterCheese.AmongUsMemory
         public IntPtr playerInfoOffset_ptr;
         public IntPtr offset_ptr;
         public string offset_str;
-
+        public bool IsLocalPlayer
+        {
+            get
+            {
+                if (Instance.myLight == UIntPtr.Zero) return false;
+                else
+                {
+                    return true;
+                }
+            }
+        }
         public Vector2 GetSyncPosition()
         {
             try
