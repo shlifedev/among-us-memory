@@ -4,8 +4,7 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
 ## Feature
  
-  - 2D Radar (Dead Player / Imposter / Player Pos)
-  - Write Memory (Set Imposter / Revive&Die)
+  - 2D Radar (Dead Player / Imposter / Player Pos) & Misc
 
 ## Source Code
 
