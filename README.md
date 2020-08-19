@@ -1,5 +1,7 @@
 # AmongUsMemory
 
+** Working Fine 2020.8.12s **
+
 ## How to Use
  
  ```cs
