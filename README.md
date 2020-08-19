@@ -21,6 +21,7 @@
             }
  ```
 
+You can get all player info ( IsImposter / IsDead / Position .. etc )
 
 ## Example Cheat
 
