@@ -8,8 +8,9 @@
   - Write Memory (Set Imposter / Revive&Die)
 
 ## Source Code
- I Share Offset Only
 
+ I do not share the cheat source code.  
+ However, i share the offset and structure used in the game.
 
 ### Important Offset & Pattern
  ```cs
