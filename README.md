@@ -14,17 +14,21 @@
  
  ```cs
  
-            HamsterCheese.AmongUsMemory.Cheese.Init();
-            var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-            Console.WriteLine("player count : " + players.Count);
-            foreach(var data in players)
+            // init your cheat. (if you want true return, require among us.exe proccess)
+            var init = HamsterCheese.AmongUsMemory.Cheese.Init(); 
+            if(init)
             {
-                Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
-            }
+              var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+              Console.WriteLine("player count : " + players.Count);
+              foreach(var data in players)
+              {
+                  Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
+              }
 
-            System.Threading.Thread.Sleep(1000000);
-            
- 
+
+              // ignore this.
+              System.Threading.Thread.Sleep(1000000);  
+            }
  ```
 
 Just use it for study purposes only.
