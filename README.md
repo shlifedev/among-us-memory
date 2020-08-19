@@ -127,7 +127,7 @@
     [StructLayout(LayoutKind.Sequential)]
     public struct PlayerInfo
     {  
-        public IntPtr test,test2;
+        public IntPtr some_static_1,some_static_2;
         public byte PlayerId;
         public UIntPtr PlayerName;
         public byte ColorId;
