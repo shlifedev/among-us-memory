@@ -9,11 +9,13 @@
 
 ## Source Code
  I Share Offset Only
- 
+
+
+### Important Offset & Pattern
  ```cs
  
              /// <summary>
-            /// Get PlayerControl
+            /// Get PlayerControl 
             /// </summary>
             public static string PlayerControl_Pointer = "GameAssembly.dll+E22AE8";  
             /// <summary>
@@ -24,7 +26,7 @@
  
  ```
  
- ## All Player Find Aob Pattern
+ ### Find Player Aob Pattern
  ```cs
  
  byte[] playerAoB = Memory.ReadBytes(EngineOffset.Pattern.PlayerControl_Pointer, PlayerControll.SizeOf());
@@ -68,7 +70,6 @@
                         offset_ptr = new IntPtr((int)x)
                     });
                 } 
-            }
-            
+            } 
  ```
  
