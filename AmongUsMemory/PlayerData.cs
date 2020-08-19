@@ -7,8 +7,12 @@ namespace HamsterCheese.AmongUsMemory
 {
     public class PlayerData
     {
-        public PlayerControll Instance;
+        #region ObserveStates
+        private bool observe_dieFlag = false;
+        #endregion
 
+        public PlayerControll Instance;
+        public System.Action<Vector2, byte> onDie; 
         public IntPtr PlayerControl_GetData_Offset = IntPtr.Zero;
 
 
@@ -16,6 +20,61 @@ namespace HamsterCheese.AmongUsMemory
         public IntPtr playerInfoOffset_ptr;
         public IntPtr offset_ptr;
         public string offset_str;
+
+
+        public void WriteMemory_Imposter(byte value)
+        {
+            var targetPointer = playerInfoOffset_ptr.Sum(40); 
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
+        }
+        /// <summary>
+        /// Set Player Dead State.
+        /// </summary>
+        /// <param name="value"></param>
+        public void WriteMemory_IsDead(byte value)
+        {
+            var targetPointer = playerInfoOffset_ptr.Sum(41);
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
+        }
+        /// <summary>
+        /// Set Player KillTimer
+        /// </summary>
+        /// <param name="value"></param>
+        public void WriteMemory_KillTimer(float value)
+        {
+            var targetPointer = offset_ptr.Sum(44); 
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString());
+        }
+
+
+        public void ObserveState()
+        {
+            if (PlayerInfo.HasValue)
+            {
+                if (observe_dieFlag == false && PlayerInfo.Value.IsDead == 1)
+                {
+                    observe_dieFlag = true;
+                    onDie?.Invoke(Position, PlayerInfo.Value.ColorId);
+                }
+            }
+        }
+
+        public Vector2 Position
+        {
+            get
+            {
+                if (IsLocalPlayer)
+                    return GetMyPosition();
+                else
+                    return GetSyncPosition();
+            }
+        }
+
+        public void ReadMemory()
+        {
+            Instance = Utils.FromBytes<PlayerControll>(Cheese.mem.ReadBytes(offset_str, Utils.SizeOf<PlayerControll>()));
+        }
+
         public bool IsLocalPlayer
         {
             get
@@ -27,6 +86,8 @@ namespace HamsterCheese.AmongUsMemory
                 }
             }
         }
+
+
         public Vector2 GetSyncPosition()
         {
             try
@@ -89,6 +150,7 @@ namespace HamsterCheese.AmongUsMemory
                 if (m_pInfo == null)
                 {
                     playerInfoOffset = Methods.Call_PlayerControl_GetData(this.offset_ptr).GetAddress();
+                    Console.WriteLine(playerInfoOffset);
                     PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
                     m_pInfo = pInfo;
                 } 

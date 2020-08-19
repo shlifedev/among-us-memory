@@ -55,13 +55,15 @@ namespace HamsterCheese.AmongUsMemory
             }
             // get result 
             var result = Cheese.mem.AoBScan(aobData, true, true);
-            result.Wait();
-            var results =    result.Result;
+                result.Wait();
 
+
+       
+            var results =    result.Result; 
             // player
             foreach (var x in results)
             {
-                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>());
+                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>()); 
                 var playerControll = Utils.FromBytes<PlayerControll>(bytes);
                 // among us real instanced player ownerid is 257 :)
                 if (playerControll.OwnerId == 257 && playerControll.netId != 0)
