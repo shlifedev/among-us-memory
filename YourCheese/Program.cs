@@ -12,11 +12,17 @@ namespace YourCheese
         {
             HamsterCheese.AmongUsMemory.Cheese.Init();
             var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-            foreach(var data in players)
-            {
-                Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
-            }
 
+            Console.WriteLine("Test Read Player Datas..");
+            while (true)
+            {
+                foreach (var data in players)
+                {
+                    Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
+                    Console.WriteLine("find player position : " + data.GetSyncPosition().x + "," + data.GetSyncPosition().y);
+                }
+
+            }
             System.Threading.Thread.Sleep(1000000);
         }
     }

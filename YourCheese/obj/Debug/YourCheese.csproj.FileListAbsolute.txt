@@ -11,3 +11,16 @@ C:\Users\shlif\source\repos\AmongUsMemory\YourCheese\obj\Debug\YourCheese.csproj
 C:\Users\shlif\source\repos\AmongUsMemory\YourCheese\obj\Debug\YourCheese.csproj.CopyComplete
 C:\Users\shlif\source\repos\AmongUsMemory\YourCheese\obj\Debug\YourCheese.exe
 C:\Users\shlif\source\repos\AmongUsMemory\YourCheese\obj\Debug\YourCheese.pdb
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\YourCheese.exe.config
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\YourCheese.exe
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\YourCheese.pdb
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\AmongUsMemory.dll
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\Memory.dll
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\AmongUsMemory.pdb
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\Memory.pdb
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\bin\Debug\Memory.xml
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\obj\Debug\YourCheese.csprojAssemblyReference.cache
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\obj\Debug\YourCheese.csproj.CoreCompileInputs.cache
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\obj\Debug\YourCheese.csproj.CopyComplete
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\obj\Debug\YourCheese.exe
+C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\YourCheese\obj\Debug\YourCheese.pdb
