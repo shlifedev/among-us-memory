@@ -1,5 +1,5 @@
 # AmongUsPublic
- ![](https://github.com/shlifedev/AmongUsPublic/blob/master/111111111111111.PNG)
+ ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG)
  
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
 ## Feature
