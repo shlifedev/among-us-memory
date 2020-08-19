@@ -1,6 +1,6 @@
 # AmongUsMemory
 
-** Working Fine 2020.8.12s **
+**Working Fine 2020.8.12s**
 
 ## How to Use
  
