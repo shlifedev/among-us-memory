@@ -3,22 +3,23 @@
 ## How to Use
  
  ```cs
- 
-            // init your cheat. (if you want true return, require among us.exe proccess)
-            var init = HamsterCheese.AmongUsMemory.Cheese.Init(); 
-            if(init)
+        static void Main(string[] args)
+        {
+            HamsterCheese.AmongUsMemory.Cheese.Init();
+            var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+
+            Console.WriteLine("Test Read Player Datas..");
+            while (true)
             {
-              var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-              Console.WriteLine("player count : " + players.Count);
-              foreach(var data in players)
-              {
-                  Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
-              }
+                foreach (var data in players)
+                {
+                    Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
+                    Console.WriteLine("find player position : " + data.GetSyncPosition().x + "," + data.GetSyncPosition().y);
+                }
 
-
-              // ignore this.
-              System.Threading.Thread.Sleep(1000000);  
             }
+            System.Threading.Thread.Sleep(1000000);
+        }
  ```
 
 You can get all player info ( IsImposter / IsDead / Position .. etc )
