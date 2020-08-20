@@ -39,3 +39,4 @@ Just use it for study purposes only.
 ## TODO
 
  full automatic cheating (detect map, detect new game.. etc)
+ currently require restart cheat every game.
