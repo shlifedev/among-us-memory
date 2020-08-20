@@ -6,7 +6,7 @@ namespace HamsterCheese.AmongUsMemory
     [System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]
     public struct PlayerControll
     {
-        [System.Runtime.InteropServices.FieldOffset(8)] public uint m_CachedPtr;
+        [System.Runtime.InteropServices.FieldOffset(8)]         public uint m_CachedPtr;
         [System.Runtime.InteropServices.FieldOffset(12)]        public uint SpawnId;
         [System.Runtime.InteropServices.FieldOffset(16)]        public uint NetId;
         [System.Runtime.InteropServices.FieldOffset(20)]        public uint DirtyBits;
