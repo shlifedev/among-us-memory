@@ -11,7 +11,7 @@ namespace YourCheese
     {
         static int tableWidth = 75;
         static void Main(string[] args)
-        { 
+        {  
             HamsterCheese.AmongUsMemory.Cheese.Init();
             var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
 

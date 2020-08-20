@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Linq;
 
-namespace AmongUsMemory.StructGenerator
+namespace HamsterCheese.StructGenerator
 {
     public class Element
     {

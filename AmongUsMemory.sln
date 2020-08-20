@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AmongUsMemory", "AmongUsMem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YourCheese", "YourCheese\YourCheese.csproj", "{2AAD7850-0176-4CDD-BC0F-FD42159F7413}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonoUtil", "MonoUtil\MonoUtil.csproj", "{F8AC8BFF-DAC2-4966-861B-8A9E2C592AB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2AAD7850-0176-4CDD-BC0F-FD42159F7413}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AAD7850-0176-4CDD-BC0F-FD42159F7413}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AAD7850-0176-4CDD-BC0F-FD42159F7413}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8AC8BFF-DAC2-4966-861B-8A9E2C592AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8AC8BFF-DAC2-4966-861B-8A9E2C592AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8AC8BFF-DAC2-4966-861B-8A9E2C592AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8AC8BFF-DAC2-4966-861B-8A9E2C592AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
