@@ -3,7 +3,12 @@
 **Working Fine 2020.8.12s**
 
 ## How to Use
+ 1. Download Source Code
+ 2. Add Reference AmongUsMemory Your Project 
+ 3. End
  
+ 
+ Example Code
  ```cs
         static void Main(string[] args)
         {
