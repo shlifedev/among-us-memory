@@ -26,7 +26,7 @@ namespace YourCheese
                 if (data.IsLocalPlayer)
                     Console.ForegroundColor = ConsoleColor.Green;
 
-                PrintRow($"{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+                PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
 
                 Console.ForegroundColor = ConsoleColor.White;
                 PrintLine();
