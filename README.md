@@ -36,3 +36,6 @@ You can get all player info ( IsImposter / IsDead / Position .. etc )
 Just use it for study purposes only.
 
 
+## TODO
+
+ full automatic cheating (detect map, detect new game.. etc)
