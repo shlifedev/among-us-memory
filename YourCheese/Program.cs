@@ -11,23 +11,29 @@ namespace YourCheese
     {
         static int tableWidth = 75;
         static void Main(string[] args)
-        {
-
-            Generator.Generate(@"C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\XmlStructs\");
+        { 
             HamsterCheese.AmongUsMemory.Cheese.Init();
             var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+
             Console.WriteLine("Test Read Player Datas..");
+
+            /// draw table
+
             PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
             PrintLine();
             foreach (var data in players)
             {
                 if (data.IsLocalPlayer)
                     Console.ForegroundColor = ConsoleColor.Green;
+
                 PrintRow($"{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+
                 Console.ForegroundColor = ConsoleColor.White;
                 PrintLine();
-          
             }   
+
+
+
             System.Threading.Thread.Sleep(1000000);
         }
 
