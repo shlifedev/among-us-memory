@@ -1,0 +1,42 @@
+
+<Elements>
+  <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="m_CachedPtr" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="4 Bytes" Bytesize="4" Description="SpawnId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="4 Bytes" Bytesize="4" Description="NetId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="4 Bytes" Bytesize="4" Description="DirtyBits" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="4 Bytes" Bytesize="4" Description="SpawnFlags" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="25" Vartype="4 Bytes" Bytesize="4" Description="sendMode" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="4 Bytes" Bytesize="4" Description="OwnerId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Byte" Bytesize="1" Description="DespawnOnDestroy" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="4 Bytes" Bytesize="4" Description="LastStartCounter" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="40" Vartype="Byte" Bytesize="1" Description="PlayerId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="44" Vartype="Float" Bytesize="4" Description="MaxReportDistance" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="48" Vartype="Byte" Bytesize="1" Description="moveable" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="49" Vartype="Byte" Bytesize="1" Description="inVent" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="52" Vartype="Pointer" Bytesize="4" Description="_cachedData" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="56" Vartype="Pointer" Bytesize="4" Description="FootSteps" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="60" Vartype="Pointer" Bytesize="4" Description="KillSfx" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="64" Vartype="Pointer" Bytesize="4" Description="KillAnimations" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="68" Vartype="Float" Bytesize="4" Description="killTimer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="72" Vartype="4 Bytes" Bytesize="4" Description="RemainingEmergencies" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="76" Vartype="Pointer" Bytesize="4" Description="nameText" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="80" Vartype="Pointer" Bytesize="4" Description="LightPrefab" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="84" Vartype="Pointer" Bytesize="4" Description="myLight" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="88" Vartype="Pointer" Bytesize="4" Description="Collider" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="92" Vartype="Pointer" Bytesize="4" Description="MyPhysics" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="96" Vartype="Pointer" Bytesize="4" Description="NetTransform" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="100" Vartype="Pointer" Bytesize="4" Description="CurrentPet" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="104" Vartype="Pointer" Bytesize="4" Description="HatRenderer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="108" Vartype="Pointer" Bytesize="4" Description="myRend" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="112" Vartype="Pointer" Bytesize="4" Description="hitBuffer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="116" Vartype="Pointer" Bytesize="4" Description="myTasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="120" Vartype="Pointer" Bytesize="4" Description="ScannerAnims" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="124" Vartype="Pointer" Bytesize="4" Description="ScannersImages" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="128" Vartype="Pointer" Bytesize="4" Description="closest" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="132" Vartype="Byte" Bytesize="1" Description="isNew" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="136" Vartype="Pointer" Bytesize="4" Description="cache" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="140" Vartype="Pointer" Bytesize="4" Description="itemsInRange" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="144" Vartype="Pointer" Bytesize="4" Description="newItemsInRange" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="148" Vartype="Byte" Bytesize="1" Description="scannerCount" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="149" Vartype="Byte" Bytesize="1" Description="infectedSet" DisplayMethod="Unsigned Integer"/>
+</Elements>

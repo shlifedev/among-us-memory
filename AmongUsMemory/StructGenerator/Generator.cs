@@ -37,6 +37,9 @@ namespace AmongUsMemory.StructGenerator
                     em.displayMethod = m.Attribute("DisplayMethod").Value;
                      datas.Add(em);
                 }
+
+                datas = datas.OrderBy(x => x.offset).ToList();
+
                 Gen(file.Name.Split('.')[0], datas);
             }
         }
@@ -49,9 +52,13 @@ namespace AmongUsMemory.StructGenerator
                 if (dm == "Unsigned Integer") return "uint";
                 if (dm == "Integer") return "int";
             }
+            if (varType == "Float")
+            {
+                if (dm == "Unsigned Integer") return "float";
+            }
             if (varType == "Byte")
             {
-                if (dm == "Unsigned Integer") return "byte"; 
+                if (dm == "Unsigned Integer") return "byte";
             }
             return varType.ToLower();
         }

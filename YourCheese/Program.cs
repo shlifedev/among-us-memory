@@ -23,7 +23,7 @@ namespace YourCheese
             {
                 if (data.IsLocalPlayer)
                     Console.ForegroundColor = ConsoleColor.Green;
-                PrintRow($"{data.offset_str}", $"{data.Instance.netId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.spawnId}", $"{data.Instance.SpawnFlags}");
+                PrintRow($"{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
                 Console.ForegroundColor = ConsoleColor.White;
                 PrintLine();
           

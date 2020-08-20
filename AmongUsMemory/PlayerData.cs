@@ -79,7 +79,7 @@ namespace HamsterCheese.AmongUsMemory
         {
             get
             {
-                if (Instance.myLight == UIntPtr.Zero) return false;
+                if (Instance.myLight == IntPtr.Zero) return false;
                 else
                 {
                     return true;

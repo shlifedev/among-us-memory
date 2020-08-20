@@ -70,7 +70,7 @@ namespace HamsterCheese.AmongUsMemory
                 var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>());  
                 var playerControll = Utils.FromBytes<PlayerControll>(bytes);
                 // filter garbage instance datas.
-                if (playerControll.SpawnFlags == 257 && playerControll.netId < uint.MaxValue - 10000)
+                if (playerControll.SpawnFlags == 257 && playerControll.NetId < uint.MaxValue - 10000)
                 {  
                     datas.Add(new PlayerData()
                     {

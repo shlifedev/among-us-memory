@@ -3,90 +3,50 @@ using System.Runtime.InteropServices;
 
 namespace HamsterCheese.AmongUsMemory
 {
-    [System.Serializable]
-    [StructLayout(LayoutKind.Explicit)]
+    [System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]
     public struct PlayerControll
     {
-   
-        [FieldOffset(0x08)]
-        public UIntPtr m_cachedPtr;
-        [FieldOffset(0x0c)]
-        public uint spawnId;
-        [FieldOffset(0x10)]
-        public uint netId;
-        [FieldOffset(0x14)]
-        public uint DirtyBits;
-        [FieldOffset(0x18)]
-        public int SpawnFlags;
-        [FieldOffset(0x19)]
-        public byte sendMode;
-        [FieldOffset(0x1c)]
-        public uint OwnerId;
-        [FieldOffset(0x20)]
-        public byte DespawnOnDestroy;
-        [FieldOffset(0x24)]
-        public Int32 LastStartCounter;
-        [FieldOffset(0x28)]
-        public byte PlayerId;
-        [FieldOffset(0x2c)]
-        public Single MaxReportDistance;
-        [FieldOffset(0x30)]
-        public bool moveable;
-        [FieldOffset(0x31)]
-        public byte inVent;
-        [FieldOffset(0x34)]
-        public UIntPtr _cachedData;
-        [FieldOffset(0x38)]
-        public UIntPtr FootSteps;
-        [FieldOffset(0x3c)]
-        public UIntPtr KillSfx;
-        [FieldOffset(0x40)]
-        public UIntPtr KillAnimations;
-        [FieldOffset(0x44)]
-        public Single killTimer;
-        [FieldOffset(0x48)]
-        public Int32 RemainingEmergencies;
-        [FieldOffset(0x4c)]
-        public UIntPtr nameText;
-        [FieldOffset(0x50)]
-        public UIntPtr LightPrefab;
-        [FieldOffset(0x54)]
-        public UIntPtr myLight;
-        [FieldOffset(0x58)]
-        public UIntPtr Collider;
-        [FieldOffset(0x5c)]
-        public UIntPtr MyPhysics;
-        [FieldOffset(0x60)]
-        public UIntPtr NetTransform;
-        [FieldOffset(0x64)]
-        public UIntPtr CurrentPet;
-        [FieldOffset(0x68)]
-        public UIntPtr HatRenderer;
-        [FieldOffset(0x6c)]
-        public UIntPtr myRend;
-        [FieldOffset(0x70)]
-        public UIntPtr hitBuffer;
-        [FieldOffset(0x74)]
-        public UIntPtr myTasks;
-        [FieldOffset(0x78)]
-        public UIntPtr ScannerAnims;
-        [FieldOffset(0x7c)]
-        public UIntPtr ScannersImages;
-        [FieldOffset(0x80)]
-        public UIntPtr closest;
-        [FieldOffset(0x84)]
-        public Boolean isNew;
-        [FieldOffset(0x88)]
-        public UIntPtr cache;
-        [FieldOffset(0x8c)]
-        public UIntPtr itemsInRange;
-        [FieldOffset(0x90)]
-        public UIntPtr newItemsInRange;
-        [FieldOffset(0x94)]
-        public Byte scannerCount;
-        [FieldOffset(0x95)]
-        public Boolean infectedSet;
+        [System.Runtime.InteropServices.FieldOffset(8)] public uint m_CachedPtr;
+        [System.Runtime.InteropServices.FieldOffset(12)]        public uint SpawnId;
+        [System.Runtime.InteropServices.FieldOffset(16)]        public uint NetId;
+        [System.Runtime.InteropServices.FieldOffset(20)]        public uint DirtyBits;
+        [System.Runtime.InteropServices.FieldOffset(24)]        public uint SpawnFlags;
+        [System.Runtime.InteropServices.FieldOffset(25)]        public uint sendMode;
+        [System.Runtime.InteropServices.FieldOffset(28)]        public uint OwnerId;
+        [System.Runtime.InteropServices.FieldOffset(32)]        public byte DespawnOnDestroy;
+        [System.Runtime.InteropServices.FieldOffset(36)]        public uint LastStartCounter;
+        [System.Runtime.InteropServices.FieldOffset(40)]        public byte PlayerId;
+        [System.Runtime.InteropServices.FieldOffset(44)]        public float MaxReportDistance;
+        [System.Runtime.InteropServices.FieldOffset(48)]        public byte moveable;
+        [System.Runtime.InteropServices.FieldOffset(49)]        public byte inVent;
+        [System.Runtime.InteropServices.FieldOffset(52)]        public IntPtr _cachedData;
+        [System.Runtime.InteropServices.FieldOffset(56)]        public IntPtr FootSteps;
+        [System.Runtime.InteropServices.FieldOffset(60)]        public IntPtr KillSfx;
+        [System.Runtime.InteropServices.FieldOffset(64)]        public IntPtr KillAnimations;
+        [System.Runtime.InteropServices.FieldOffset(68)]        public float killTimer;
+        [System.Runtime.InteropServices.FieldOffset(72)]        public uint RemainingEmergencies;
+        [System.Runtime.InteropServices.FieldOffset(76)]        public IntPtr nameText;
+        [System.Runtime.InteropServices.FieldOffset(80)]        public IntPtr LightPrefab;
+        [System.Runtime.InteropServices.FieldOffset(84)]        public IntPtr myLight;
+        [System.Runtime.InteropServices.FieldOffset(88)]        public IntPtr Collider;
+        [System.Runtime.InteropServices.FieldOffset(92)]        public IntPtr MyPhysics;
+        [System.Runtime.InteropServices.FieldOffset(96)]        public IntPtr NetTransform;
+        [System.Runtime.InteropServices.FieldOffset(100)]       public IntPtr CurrentPet;
+        [System.Runtime.InteropServices.FieldOffset(104)]       public IntPtr HatRenderer;
+        [System.Runtime.InteropServices.FieldOffset(108)]       public IntPtr myRend;
+        [System.Runtime.InteropServices.FieldOffset(112)]       public IntPtr hitBuffer;
+        [System.Runtime.InteropServices.FieldOffset(116)]       public IntPtr myTasks;
+        [System.Runtime.InteropServices.FieldOffset(120)]       public IntPtr ScannerAnims;
+        [System.Runtime.InteropServices.FieldOffset(124)]       public IntPtr ScannersImages;
+        [System.Runtime.InteropServices.FieldOffset(128)]       public IntPtr closest;
+        [System.Runtime.InteropServices.FieldOffset(132)]       public byte isNew;
+        [System.Runtime.InteropServices.FieldOffset(136)]       public IntPtr cache;
+        [System.Runtime.InteropServices.FieldOffset(140)]       public IntPtr itemsInRange;
+        [System.Runtime.InteropServices.FieldOffset(144)]       public IntPtr newItemsInRange;
+        [System.Runtime.InteropServices.FieldOffset(148)]       public byte scannerCount;
+        [System.Runtime.InteropServices.FieldOffset(149)]       public byte infectedSet;
     }
+
     [System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]
     public struct PlayerInfo
     {
@@ -105,7 +65,7 @@ namespace HamsterCheese.AmongUsMemory
 
 
 
-        [System.Serializable]
+    [System.Serializable]
     [StructLayout(LayoutKind.Sequential)]
     public struct Vector2
     {
