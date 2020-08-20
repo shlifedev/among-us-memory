@@ -1,0 +1,13 @@
+<Elements>
+  <Element Offset="44" Vartype="Pointer" Bytesize="4" Description="_object" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="41" Vartype="Byte" Bytesize="1" Description="IsDead" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="40" Vartype="Byte" Bytesize="1" Description="IsImpostor" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="Pointer" Bytesize="4" Description="Tasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Byte" Bytesize="1" Description="Disconnected" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="4 Bytes" Bytesize="4" Description="SkinId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="4 Bytes" Bytesize="4" Description="PetId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="4 Bytes" Bytesize="4" Description="HatId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="Byte" Bytesize="1" Description="ColorId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="Pointer" Bytesize="4" ChildStruct="String" Description="PlayerName" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="8" Vartype="Byte" Bytesize="1" Description="PlayerId" DisplayMethod="Unsigned Integer"/>
+</Elements>

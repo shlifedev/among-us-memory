@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AmongUsMemory.StructGenerator;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,6 +12,8 @@ namespace YourCheese
         static int tableWidth = 75;
         static void Main(string[] args)
         {
+
+            Generator.Generate(@"C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\XmlStructs\");
             HamsterCheese.AmongUsMemory.Cheese.Init();
             var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
             Console.WriteLine("Test Read Player Datas..");

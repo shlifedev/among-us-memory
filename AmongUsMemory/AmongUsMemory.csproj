@@ -50,6 +50,7 @@
     <Compile Include="PlayerData.cs" />
     <Compile Include="ProcessMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StructGenerator\Generator.cs" />
     <Compile Include="Structures.cs" />
     <Compile Include="Utils.cs" />
   </ItemGroup>
