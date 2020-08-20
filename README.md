@@ -40,3 +40,8 @@ Just use it for study purposes only.
 
  full automatic cheating (detect map, detect new game.. etc)
  currently require restart cheat every game.
+ 
+## PatchNotes
+
+ 2020-08-20 -- fix wrong data structure
+ 2020-08-20 -- added auto structure generator xml based
