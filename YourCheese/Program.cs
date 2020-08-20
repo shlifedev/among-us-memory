@@ -1,4 +1,4 @@
-﻿using AmongUsMemory.StructGenerator;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
