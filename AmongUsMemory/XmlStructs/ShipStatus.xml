@@ -1,0 +1,49 @@
+<Elements>
+  <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="m_CachedPtr" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="4 Bytes" Bytesize="4" Description="SpawnId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="4 Bytes" Bytesize="4" Description="NetId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="4 Bytes" Bytesize="4" Description="DirtyBits" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="4 Bytes" Bytesize="4" Description="SpawnFlags" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="25" Vartype="4 Bytes" Bytesize="4" Description="sendMode" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="4 Bytes" Bytesize="4" Description="OwnerId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Byte" Bytesize="1" Description="DespawnOnDestroy" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="4 Bytes" Bytesize="4" Description="CameraColor" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="52" Vartype="Float" Bytesize="4" Description="MaxLightRadius" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="56" Vartype="Float" Bytesize="4" Description="MinLightRadius" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="60" Vartype="Float" Bytesize="4" Description="MapScale" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="64" Vartype="Pointer" Bytesize="4" Description="MapPrefab" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="68" Vartype="Pointer" Bytesize="4" Description="ExileCutscenePrefab" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="72" Vartype="4 Bytes" Bytesize="4" Description="InitialSpawnCenter" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="80" Vartype="4 Bytes" Bytesize="4" Description="MeetingSpawnCenter" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="88" Vartype="4 Bytes" Bytesize="4" Description="MeetingSpawnCenter2" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="96" Vartype="Float" Bytesize="4" Description="SpawnRadius" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="100" Vartype="Pointer" Bytesize="4" Description="CommonTasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="104" Vartype="Pointer" Bytesize="4" Description="LongTasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="108" Vartype="Pointer" Bytesize="4" Description="NormalTasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="112" Vartype="Pointer" Bytesize="4" Description="SpecialTasks" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="116" Vartype="Pointer" Bytesize="4" Description="DummyLocations" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="120" Vartype="Pointer" Bytesize="4" Description="AllCameras" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="124" Vartype="Pointer" Bytesize="4" Description="AllDoors" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="128" Vartype="Pointer" Bytesize="4" Description="AllConsoles" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="132" Vartype="Pointer" Bytesize="4" Description="Systems" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="136" Vartype="Pointer" Bytesize="4" Description="&lt;AllStepWatchers&gt;k__BackingField" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="140" Vartype="Pointer" Bytesize="4" Description="&lt;AllRooms&gt;k__BackingField" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="144" Vartype="Pointer" Bytesize="4" Description="&lt;FastRooms&gt;k__BackingField" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="148" Vartype="Pointer" Bytesize="4" Description="&lt;AllVents&gt;k__BackingField" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="152" Vartype="Pointer" Bytesize="4" Description="WeaponFires" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="156" Vartype="Pointer" Bytesize="4" Description="WeaponsImage" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="160" Vartype="Pointer" Bytesize="4" Description="VentMoveSounds" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="164" Vartype="Pointer" Bytesize="4" Description="VentEnterSound" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="168" Vartype="Pointer" Bytesize="4" Description="HatchActive" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="172" Vartype="Pointer" Bytesize="4" Description="Hatch" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="176" Vartype="Pointer" Bytesize="4" Description="HatchParticles" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="180" Vartype="Pointer" Bytesize="4" Description="ShieldsActive" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="184" Vartype="Pointer" Bytesize="4" Description="ShieldsImages" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="188" Vartype="Pointer" Bytesize="4" Description="ShieldBorder" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="192" Vartype="Pointer" Bytesize="4" Description="ShieldBorderOn" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="196" Vartype="Pointer" Bytesize="4" Description="MedScanner" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="200" Vartype="4 Bytes" Bytesize="4" Description="WeaponFireIdx" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="204" Vartype="Float" Bytesize="4" Description="Timer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="208" Vartype="Float" Bytesize="4" Description="EmergencyCooldown" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="212" Vartype="4 Bytes" Bytesize="4" Description="Type" DisplayMethod="Unsigned Integer"/>
+</Elements>

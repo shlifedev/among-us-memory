@@ -1,0 +1,41 @@
+
+<Elements>
+  <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="m_CachedPtr" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="Float" Bytesize="4" Description="MinSendInterval" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="4 Bytes" Bytesize="4" Description="NetIdCnt" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="Float" Bytesize="4" Description="timer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="Pointer" Bytesize="4" Description="SpawnableObjects" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="Byte" Bytesize="1" Description="InOnlineScene" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Pointer" Bytesize="4" Description="DestroyedObjects" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="Pointer" Bytesize="4" Description="allObjects" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="40" Vartype="Pointer" Bytesize="4" Description="allObjectsFast" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="44" Vartype="Pointer" Bytesize="4" Description="Streams" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="48" Vartype="Pointer" Bytesize="4" ChildStruct="String" Description="networkAddress" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="52" Vartype="4 Bytes" Bytesize="4" Description="networkPort" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="56" Vartype="Pointer" Bytesize="4" Description="connection" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="60" Vartype="4 Bytes" Bytesize="4" Description="mode" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="64" Vartype="4 Bytes" Bytesize="4" Description="GameId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="68" Vartype="4 Bytes" Bytesize="4" Description="HostId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="72" Vartype="4 Bytes" Bytesize="4" Description="ClientId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="76" Vartype="Pointer" Bytesize="4" Description="allClients" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="80" Vartype="4 Bytes" Bytesize="4" Description="LastDisconnectReason" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="84" Vartype="Pointer" Bytesize="4" ChildStruct="String" Description="LastCustomDisconnect" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="88" Vartype="Pointer" Bytesize="4" Description="PreSpawnDispatcher" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="92" Vartype="Pointer" Bytesize="4" Description="Dispatcher" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="96" Vartype="Byte" Bytesize="1" Description="&lt;IsGamePublic&gt;k__BackingField" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="100" Vartype="4 Bytes" Bytesize="4" Description="GameState" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="104" Vartype="Pointer" Bytesize="4" Description="TempQueue" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="108" Vartype="Byte" Bytesize="1" Description="appPaused" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="112" Vartype="4 Bytes" Bytesize="4" Description="AutoOpenStore" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="116" Vartype="4 Bytes" Bytesize="4" Description="GameMode" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="120" Vartype="Pointer" Bytesize="4" ChildStruct="String" Description="OnlineScene" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="124" Vartype="Pointer" Bytesize="4" ChildStruct="String" Description="MainMenuScene" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="128" Vartype="Pointer" Bytesize="4" Description="GameDataPrefab" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="132" Vartype="Pointer" Bytesize="4" Description="PlayerPrefab" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="136" Vartype="Pointer" Bytesize="4" Description="ShipPrefabs" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="140" Vartype="4 Bytes" Bytesize="4" Description="TutorialMapId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="144" Vartype="Float" Bytesize="4" Description="SpawnRadius" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="148" Vartype="4 Bytes" Bytesize="4" Description="discoverState" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="152" Vartype="Pointer" Bytesize="4" Description="DisconnectHandlers" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="156" Vartype="Pointer" Bytesize="4" Description="GameListHandlers" DisplayMethod="Unsigned Integer"/>
+</Elements>
