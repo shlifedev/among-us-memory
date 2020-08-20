@@ -26,6 +26,10 @@ namespace HamsterCheese.AmongUsMemory
             }
             return false;
         } 
+
+        
+
+
         public static List<PlayerData> GetAllPlayers()
         { 
             List<PlayerData > datas = new List<PlayerData>();
@@ -60,22 +64,23 @@ namespace HamsterCheese.AmongUsMemory
 
        
             var results =    result.Result; 
-            // player
+            // real-player
             foreach (var x in results)
             {
-                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>()); 
+                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>());  
                 var playerControll = Utils.FromBytes<PlayerControll>(bytes);
-                // among us real instanced player ownerid is 257 :)
-                if (playerControll.OwnerId == 257 && playerControll.netId != 0)
-                { 
+                // filter garbage instance datas.
+                if (playerControll.SpawnFlags == 257 && playerControll.netId < uint.MaxValue - 10000)
+                {  
                     datas.Add(new PlayerData()
                     {
                         Instance = playerControll,
                         offset_str = x.GetAddress(),
                         offset_ptr = new IntPtr((int)x)
                     });
-                }
+                } 
             }
+            Console.WriteLine("data => " + datas.Count);
             return datas;
         }
 
