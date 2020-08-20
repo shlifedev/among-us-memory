@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks; 
+using System.Threading.Tasks;
 
 namespace HamsterCheese.AmongUsMemory
 {
@@ -15,7 +15,7 @@ namespace HamsterCheese.AmongUsMemory
         public static bool Init()
         {
             var state = mem.OpenProcess("Among Us");
-    
+
             if (state)
             {
                 Methods.Init();
@@ -27,18 +27,55 @@ namespace HamsterCheese.AmongUsMemory
             return false;
         } 
 
-        
+        public static ShipStatus GetShipStatus()
+        {
+            ShipStatus shipStatus = new ShipStatus();
+            byte[] shipAob = Cheese.mem.ReadBytes(Pattern.ShipStatus_Pointer, Utils.SizeOf<ShipStatus>());
+            var garbageInstance = Utils.FromBytes<ShipStatus>(shipAob); 
+            
+            var bytes2 = Cheese.mem.ReadBytes(garbageInstance.instance.GetAddress(), Utils.SizeOf<ShipStatus>());
+            var singleTonInstance = Utils.FromBytes<ShipStatus>(bytes2);  
          
+            shipStatus = singleTonInstance;   
+            return shipStatus;
+        }
 
+
+        public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
+        {
+            int cnt = 0;
+            // aob pattern
+            string aobData = "";
+            // read 4byte aob pattern.
+            foreach (var _byte in aobTarget)
+            {
+                if (_byte < 16)
+                    aobData += "0" + _byte.ToString("X");
+                else
+                    aobData += _byte.ToString("X");
+
+                if (cnt + 1 != 4)
+                    aobData += " ";
+
+                cnt++;
+                if (cnt == length)
+                {
+                    aobData += $" {unknownText}";
+                    break;
+                }
+            }
+            return aobData;
+        }
         public static List<PlayerData> GetAllPlayers()
-        { 
+        {
+            GetShipStatus();
             List<PlayerData > datas = new List<PlayerData>();
 
             // find player pointer
-            byte[] playerAoB = Cheese.mem.ReadBytes(Pattern.PlayerControl_Pointer, Utils.SizeOf<PlayerControl>()); 
+            byte[] playerAoB = Cheese.mem.ReadBytes(Pattern.PlayerControl_Pointer, Utils.SizeOf<PlayerControl>());
             int cnt = 0;
             // aob pattern
-            string aobData = ""; 
+            string aobData = "";
             // read 4byte aob pattern.
             foreach (var _byte in playerAoB)
             {
@@ -59,26 +96,26 @@ namespace HamsterCheese.AmongUsMemory
             }
             // get result 
             var result = Cheese.mem.AoBScan(aobData, true, true);
-                result.Wait();
+            result.Wait();
 
 
-       
-            var results =    result.Result; 
+
+            var results =    result.Result;
             // real-player
             foreach (var x in results)
             {
-                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControl>());  
+                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControl>());
                 var PlayerControl = Utils.FromBytes<PlayerControl>(bytes);
                 // filter garbage instance datas.
                 if (PlayerControl.SpawnFlags == 257 && PlayerControl.NetId < uint.MaxValue - 10000)
-                {  
+                {
                     datas.Add(new PlayerData()
                     {
                         Instance = PlayerControl,
                         offset_str = x.GetAddress(),
                         offset_ptr = new IntPtr((int)x)
                     });
-                } 
+                }
             }
             Console.WriteLine("data => " + datas.Count);
             return datas;

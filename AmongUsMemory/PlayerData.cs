@@ -22,9 +22,9 @@ namespace HamsterCheese.AmongUsMemory
         public string offset_str;
 
 
-        public void WriteMemory_Imposter(byte value)
+        public void WriteMemory_Impostor(byte value)
         {
-            var targetPointer = playerInfoOffset_ptr.Sum(40); 
+            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsImpostor"); 
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace HamsterCheese.AmongUsMemory
         /// <param name="value"></param>
         public void WriteMemory_IsDead(byte value)
         {
-            var targetPointer = playerInfoOffset_ptr.Sum(41);
+            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsDead");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
         /// <summary>
@@ -42,7 +42,7 @@ namespace HamsterCheese.AmongUsMemory
         /// <param name="value"></param>
         public void WriteMemory_KillTimer(float value)
         {
-            var targetPointer = offset_ptr.Sum(44); 
+            var targetPointer = Utils.GetMemberPointer(offset_ptr, typeof(PlayerControl), "killTimer");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString());
         }
 
@@ -149,9 +149,11 @@ namespace HamsterCheese.AmongUsMemory
             {
                 if (m_pInfo == null)
                 {
-                    playerInfoOffset = Methods.Call_PlayerControl_GetData(this.offset_ptr).GetAddress();
+                    var ptr =  Methods.Call_PlayerControl_GetData(this.offset_ptr);
+                    playerInfoOffset = ptr.GetAddress();
                     Console.WriteLine(playerInfoOffset);
                     PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
+                    playerInfoOffset_ptr = new IntPtr(ptr);
                     m_pInfo = pInfo;
                 } 
                 return m_pInfo;
