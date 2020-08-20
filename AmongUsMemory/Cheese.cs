@@ -28,14 +28,14 @@ namespace HamsterCheese.AmongUsMemory
         } 
 
         
-
+         
 
         public static List<PlayerData> GetAllPlayers()
         { 
             List<PlayerData > datas = new List<PlayerData>();
 
             // find player pointer
-            byte[] playerAoB = Cheese.mem.ReadBytes(Pattern.PlayerControl_Pointer, Utils.SizeOf<PlayerControll>()); 
+            byte[] playerAoB = Cheese.mem.ReadBytes(Pattern.PlayerControl_Pointer, Utils.SizeOf<PlayerControl>()); 
             int cnt = 0;
             // aob pattern
             string aobData = ""; 
@@ -67,14 +67,14 @@ namespace HamsterCheese.AmongUsMemory
             // real-player
             foreach (var x in results)
             {
-                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControll>());  
-                var playerControll = Utils.FromBytes<PlayerControll>(bytes);
+                var bytes = Cheese.mem.ReadBytes(x.GetAddress(), Utils.SizeOf<PlayerControl>());  
+                var PlayerControl = Utils.FromBytes<PlayerControl>(bytes);
                 // filter garbage instance datas.
-                if (playerControll.SpawnFlags == 257 && playerControll.NetId < uint.MaxValue - 10000)
+                if (PlayerControl.SpawnFlags == 257 && PlayerControl.NetId < uint.MaxValue - 10000)
                 {  
                     datas.Add(new PlayerData()
                     {
-                        Instance = playerControll,
+                        Instance = PlayerControl,
                         offset_str = x.GetAddress(),
                         offset_ptr = new IntPtr((int)x)
                     });

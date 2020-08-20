@@ -11,7 +11,7 @@ namespace HamsterCheese.AmongUsMemory
         private bool observe_dieFlag = false;
         #endregion
 
-        public PlayerControll Instance;
+        public PlayerControl Instance;
         public System.Action<Vector2, byte> onDie; 
         public IntPtr PlayerControl_GetData_Offset = IntPtr.Zero;
 
@@ -72,7 +72,7 @@ namespace HamsterCheese.AmongUsMemory
 
         public void ReadMemory()
         {
-            Instance = Utils.FromBytes<PlayerControll>(Cheese.mem.ReadBytes(offset_str, Utils.SizeOf<PlayerControll>()));
+            Instance = Utils.FromBytes<PlayerControl>(Cheese.mem.ReadBytes(offset_str, Utils.SizeOf<PlayerControl>()));
         }
 
         public bool IsLocalPlayer

@@ -18,7 +18,7 @@ namespace HamsterCheese.StructGenerator
     }
     public static class Generator
     {
-        public static void Generate(string path)
+        public static void Generate(string path, string output)
         {
             System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(path);
             if (di.Exists)
@@ -41,7 +41,7 @@ namespace HamsterCheese.StructGenerator
 
                     datas = datas.OrderBy(x => x.offset).ToList();
 
-                    Gen(file.Name.Split('.')[0], datas);
+                    Gen(file.Name.Split('.')[0], datas, output);
                 }
             }
         }
@@ -64,18 +64,33 @@ namespace HamsterCheese.StructGenerator
             }
             return varType.ToLower();
         }
-        static void Gen(string className, List<Element> data)
+
+        static string ValidFieldName(string n)
         {
-            string fields = null;
+            if(n.Contains("<") || n.Contains(">"))
+            {
+                n = n.Replace("<", null);
+                n = n.Replace(">", null);
+                n = n.Replace("k__BackingField", null);
+            }
+      
+            return n;
+        }
+        static void Gen(string className, List<Element> data, string output = null)
+        {
+            string fields = "";
             foreach(var em in data)
             {
-                var field = $"[System.Runtime.InteropServices.FieldOffset({em.offset})]\tpublic {GetType(em.varType, em.displayMethod)} {em.desc};\n";
+                var field = $"[System.Runtime.InteropServices.FieldOffset({em.offset})]\tpublic {GetType(em.varType, em.displayMethod)} {ValidFieldName(em.desc)};\n";
                 fields += field;
             }
 
 
-            string m = $"[System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]\npublic struct {className}{{\n{fields}}}";
-
+            string m = $"using System; \n using System.Runtime.InteropServices;\n\n [System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]\npublic struct {className}{{\n{fields}}}";
+            if(output != null)
+            {
+                System.IO.File.WriteAllText(output +$@"\{className}.cs", m);
+            }
             Console.WriteLine(m);
         }
     }

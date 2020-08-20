@@ -10,7 +10,14 @@ namespace MonoUtil
     {
         static void Main(string[] args)
         { 
-                HamsterCheese.StructGenerator.Generator.Generate(@"C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\XmlStructs"); 
+            if(args.Length != 0)
+            {
+                Console.WriteLine(args[0]);
+                HamsterCheese.StructGenerator.Generator.Generate(args[0], args[1]);
+                return;
+            }
+            Console.WriteLine(args[0]);
+                HamsterCheese.StructGenerator.Generator.Generate(@"C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\XmlStructs", null); 
 
                 System.Threading.Thread.Sleep(99999);
         }
