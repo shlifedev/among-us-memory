@@ -21,26 +21,28 @@ namespace AmongUsMemory.StructGenerator
         public static void Generate(string path)
         {
             System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(path);
-
-            foreach(var file in di.GetFiles())
+            if (di.Exists)
             {
-                XDocument  xml =XDocument.Load(file.FullName); //"D:\\test\\config.xml" == @"D:\test\config.xml" 
-                var list = xml.Root.Elements().Reverse();
-                List< Element > datas = new List<Element>();
-                foreach(var m in list)
+                foreach (var file in di.GetFiles())
                 {
-                    Element em = new Element();
-                    em.offset = int.Parse(m.Attribute("Offset").Value);
-                    em.varType = m.Attribute("Vartype").Value;
-                    em.sizeOf = int.Parse(m.Attribute("Bytesize").Value);
-                    em.desc = m.Attribute("Description").Value;
-                    em.displayMethod = m.Attribute("DisplayMethod").Value;
-                     datas.Add(em);
+                    XDocument  xml =XDocument.Load(file.FullName);  
+                    var list = xml.Root.Elements().Reverse();
+                    List< Element > datas = new List<Element>();
+                    foreach (var m in list)
+                    {
+                        Element em = new Element();
+                        em.offset = int.Parse(m.Attribute("Offset").Value);
+                        em.varType = m.Attribute("Vartype").Value;
+                        em.sizeOf = int.Parse(m.Attribute("Bytesize").Value);
+                        em.desc = m.Attribute("Description").Value;
+                        em.displayMethod = m.Attribute("DisplayMethod").Value;
+                        datas.Add(em);
+                    }
+
+                    datas = datas.OrderBy(x => x.offset).ToList();
+
+                    Gen(file.Name.Split('.')[0], datas);
                 }
-
-                datas = datas.OrderBy(x => x.offset).ToList();
-
-                Gen(file.Name.Split('.')[0], datas);
             }
         }
 
