@@ -3,8 +3,8 @@ using System;
 
  [System.Runtime.InteropServices.StructLayout(LayoutKind.Explicit)]
 public struct ShipStatus{
-    [System.Runtime.InteropServices.FieldOffset(8)] public uint instance;
-    [System.Runtime.InteropServices.FieldOffset(8)] public uint _null;
+    [System.Runtime.InteropServices.FieldOffset(0)] public uint instance;
+    [System.Runtime.InteropServices.FieldOffset(4)] public uint _null;
     [System.Runtime.InteropServices.FieldOffset(8)] public uint m_CachedPtr;
     [System.Runtime.InteropServices.FieldOffset(12)]	public uint SpawnId;
 [System.Runtime.InteropServices.FieldOffset(16)]	public uint NetId;
