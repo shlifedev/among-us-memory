@@ -1,0 +1,23 @@
+<Elements>
+  <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="m_CachedPtr" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="4 Bytes" Bytesize="4" Description="SpawnId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="4 Bytes" Bytesize="4" Description="NetId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="4 Bytes" Bytesize="4" Description="DirtyBits" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="4 Bytes" Bytesize="4" Description="SpawnFlags" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="25" Vartype="4 Bytes" Bytesize="4" Description="sendMode" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="4 Bytes" Bytesize="4" Description="OwnerId" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Byte" Bytesize="1" Description="DespawnOnDestroy" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="Float" Bytesize="4" Description="Speed" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="40" Vartype="Float" Bytesize="4" Description="GhostSpeed" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="44" Vartype="Pointer" Bytesize="4" Description="body" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="48" Vartype="Pointer" Bytesize="4" Description="Animator" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="52" Vartype="Pointer" Bytesize="4" Description="rend" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="56" Vartype="Pointer" Bytesize="4" Description="myPlayer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="60" Vartype="Pointer" Bytesize="4" Description="RunAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="64" Vartype="Pointer" Bytesize="4" Description="IdleAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="68" Vartype="Pointer" Bytesize="4" Description="GhostIdleAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="72" Vartype="Pointer" Bytesize="4" Description="EnterVentAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="76" Vartype="Pointer" Bytesize="4" Description="ExitVentAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="80" Vartype="Pointer" Bytesize="4" Description="SpawnAnim" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="84" Vartype="Pointer" Bytesize="4" Description="Skin" DisplayMethod="Unsigned Integer"/>
+</Elements>

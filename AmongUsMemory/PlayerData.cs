@@ -22,6 +22,47 @@ namespace HamsterCheese.AmongUsMemory
         public string offset_str;
 
 
+
+
+        /// <summary>
+        /// PlayerInfo 가져오기 
+        /// </summary>
+        public PlayerInfo? PlayerInfo
+        {
+            get
+            {
+                if (m_pInfo == null)
+                {
+                    var ptr =  Methods.Call_PlayerControl_GetData(this.offset_ptr);
+                    playerInfoOffset = ptr.GetAddress();
+                    Console.WriteLine(playerInfoOffset);
+                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
+                    playerInfoOffset_ptr = new IntPtr(ptr);
+                    m_pInfo = pInfo;
+                }
+                return m_pInfo;
+            }
+        }
+        private PlayerInfo? m_pInfo = null;
+
+        
+        public LightSource LightSource
+        {
+            get
+            {
+                var lsPtr = Instance.myLight;
+                Console.WriteLine("light source : " + lsPtr.GetAddress());
+                var lsBytes = Cheese.mem.ReadBytes(lsPtr.GetAddress(), Utils.SizeOf<LightSource>());
+                var ls = Utils.FromBytes<LightSource>(lsBytes);
+                return ls; 
+            }
+        }
+        public void WriteMemory_LightRange(float value)
+        {
+            var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
+        }
+
         public void WriteMemory_Impostor(byte value)
         {
             var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsImpostor"); 
@@ -139,28 +180,7 @@ namespace HamsterCheese.AmongUsMemory
         }
 
 
-
-        /// <summary>
-        /// PlayerInfo 가져오기 
-        /// </summary>
-        public PlayerInfo? PlayerInfo
-        {
-            get
-            {
-                if (m_pInfo == null)
-                {
-                    var ptr =  Methods.Call_PlayerControl_GetData(this.offset_ptr);
-                    playerInfoOffset = ptr.GetAddress();
-                    Console.WriteLine(playerInfoOffset);
-                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
-                    playerInfoOffset_ptr = new IntPtr(ptr);
-                    m_pInfo = pInfo;
-                } 
-                return m_pInfo;
-            }
-        }
-        private PlayerInfo? m_pInfo = null;
-
+ 
 
     }
 }

@@ -51,8 +51,10 @@
     <Compile Include="ProcessMemory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Structs\AmongUsClient.cs" />
+    <Compile Include="Structs\LightSource.cs" />
     <Compile Include="Structs\PlayerControl.cs" />
     <Compile Include="Structs\PlayerInfo.cs" />
+    <Compile Include="Structs\PlayerPhysics.cs" />
     <Compile Include="Structs\ShipStatus.cs" />
     <Compile Include="Structs\_Vector2.cs" />
     <Compile Include="Utils.cs" />

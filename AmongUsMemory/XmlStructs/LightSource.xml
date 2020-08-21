@@ -1,0 +1,22 @@
+<Elements>
+  <Element Offset="8" Vartype="4 Bytes" Bytesize="4" Description="m_CachedPtr" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="12" Vartype="Pointer" Bytesize="4" Description="child" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="16" Vartype="Pointer" Bytesize="4" Description="requiredDels" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="20" Vartype="Pointer" Bytesize="4" Description="myMesh" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="24" Vartype="4 Bytes" Bytesize="4" Description="MinRays" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="28" Vartype="Float" Bytesize="4" Description="LightRadius" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="32" Vartype="Pointer" Bytesize="4" Description="Material" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="36" Vartype="Pointer" Bytesize="4" Description="verts" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="40" Vartype="4 Bytes" Bytesize="4" Description="vertCount" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="44" Vartype="Pointer" Bytesize="4" Description="buffer" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="48" Vartype="Pointer" Bytesize="4" Description="hits" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="52" Vartype="4 Bytes" Bytesize="4" Description="filter" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="80" Vartype="Pointer" Bytesize="4" Description="vec" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="84" Vartype="Pointer" Bytesize="4" Description="uvs" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="88" Vartype="Pointer" Bytesize="4" Description="triangles" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="92" Vartype="Float" Bytesize="4" Description="tol" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="96" Vartype="4 Bytes" Bytesize="4" Description="del" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="104" Vartype="4 Bytes" Bytesize="4" Description="tan" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="112" Vartype="4 Bytes" Bytesize="4" Description="side" DisplayMethod="Unsigned Integer"/>
+  <Element Offset="120" Vartype="Pointer" Bytesize="4" Description="lightHits" DisplayMethod="Unsigned Integer"/>
+</Elements>
