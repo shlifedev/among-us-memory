@@ -31,16 +31,23 @@ namespace HamsterCheese.AmongUsMemory
         {
             get
             {
-                if (m_pInfo == null)
+                if (playerInfoOffset_ptr == IntPtr.Zero)
                 {
                     var ptr =  Methods.Call_PlayerControl_GetData(this.offset_ptr);
                     playerInfoOffset = ptr.GetAddress();
-                    Console.WriteLine(playerInfoOffset);
                     PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
                     playerInfoOffset_ptr = new IntPtr(ptr);
                     m_pInfo = pInfo;
+                    return m_pInfo;
+
                 }
-                return m_pInfo;
+                else
+                {
+                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
+                    m_pInfo = pInfo;
+                    return m_pInfo;
+                }
+
             }
         }
         private PlayerInfo? m_pInfo = null;
