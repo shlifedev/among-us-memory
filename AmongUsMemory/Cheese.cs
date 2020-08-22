@@ -41,6 +41,31 @@ namespace HamsterCheese.AmongUsMemory
         }
 
 
+        public static ShipStatus GetShipStatus2()
+        {
+
+            ShipStatus shipStatus = new ShipStatus();
+            byte[] shipAob = Cheese.mem.ReadBytes(Pattern.ShipStatus_Pointer, Utils.SizeOf<ShipStatus>());
+            var aobStr = MakeAobString(shipAob, 4);
+            var aobResults = Cheese.mem.AoBScan(aobStr, true, true);
+            aobResults.Wait();
+            foreach (var result in aobResults.Result)
+            {
+                byte[] resultByte = Cheese.mem.ReadBytes(result.GetAddress(), Utils.SizeOf<ShipStatus>());
+                ShipStatus resultInst = Utils.FromBytes<ShipStatus>(resultByte);
+
+                if (resultInst.AllVents != IntPtr.Zero && resultInst.NetId < uint.MaxValue - 10000)
+                {
+                    if (resultInst.MapScale < 6470545000000 && resultInst.MapScale > 0.1f)
+                    {
+                        shipStatus = resultInst;
+                    }
+                }
+            }
+            return shipStatus;
+        }
+
+
         public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
         {
             int cnt = 0;
