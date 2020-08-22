@@ -92,8 +92,7 @@ namespace HamsterCheese.AmongUsMemory
             return aobData;
         }
         public static List<PlayerData> GetAllPlayers()
-        {
-            GetShipStatus();
+        { 
             List<PlayerData > datas = new List<PlayerData>();
 
             // find player pointer
