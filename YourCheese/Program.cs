@@ -20,24 +20,14 @@ namespace YourCheese
             /// draw table
 
             PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
+
+
             PrintLine();
             foreach (var data in players)
             {
-                if (data.IsLocalPlayer)
-                {
-                    var xx = data.LightSource;
-                    Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine(xx.LightRadius);
-
-
+                if (data.IsLocalPlayer) 
                     Console.ForegroundColor = ConsoleColor.Green;
-           
-                }
                 PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
-
-
-                
-
                 Console.ForegroundColor = ConsoleColor.White;
                 PrintLine();
             }   
