@@ -1,6 +1,7 @@
 # AmongUsMemory
 
 **Working Fine 2020.8.12s**
+
 **It only works with the version downloaded from Steam!**
 
 ## How to Use
