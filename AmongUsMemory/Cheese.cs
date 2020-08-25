@@ -27,21 +27,8 @@ namespace HamsterCheese.AmongUsMemory
             return false;
         } 
 
+ 
         public static ShipStatus GetShipStatus()
-        {
-            ShipStatus shipStatus = new ShipStatus();
-            byte[] shipAob = Cheese.mem.ReadBytes(Pattern.ShipStatus_Pointer, Utils.SizeOf<ShipStatus>());
-            var garbageInstance = Utils.FromBytes<ShipStatus>(shipAob); 
-            
-            var bytes2 = Cheese.mem.ReadBytes(garbageInstance.instance.GetAddress(), Utils.SizeOf<ShipStatus>());
-            var singleTonInstance = Utils.FromBytes<ShipStatus>(bytes2);  
-         
-            shipStatus = singleTonInstance;   
-            return shipStatus;
-        }
-
-
-        public static ShipStatus GetShipStatus2()
         {
 
             ShipStatus shipStatus = new ShipStatus();
