@@ -64,7 +64,7 @@ namespace HamsterCheese.AmongUsMemory
         /// <summary>
         /// i will soon optimize this method. it's temp.
         /// </summary> 
-        static string ReadString(IntPtr offset)
+        public static string ReadString(IntPtr offset)
         {
             //string pointer + 8 = length
             var length = HamsterCheese.AmongUsMemory.Cheese.mem.ReadInt(offset.Sum(8).GetAddress());
