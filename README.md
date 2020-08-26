@@ -10,7 +10,7 @@
  3. End
  
  
- Example Code
+### Example Code
  ```cs
         static void Main(string[] args)
         {
@@ -34,6 +34,10 @@
         }
  ```
 
+### Read String Pointer
+ Call Utils.ReadString(offset);
+ 
+ 
 You can get all player info ( IsImposter / IsDead / Position .. etc )
 
 ## Example Cheat
