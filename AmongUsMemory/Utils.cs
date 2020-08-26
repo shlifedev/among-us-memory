@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Collections.Generic;
+using System.Text;
 
 namespace HamsterCheese.AmongUsMemory
 {
@@ -73,24 +74,20 @@ namespace HamsterCheese.AmongUsMemory
             var format_length = length * 2;
 
             //string pointer + 12 = value
-            var strByte = HamsterCheese.AmongUsMemory.Cheese.mem.ReadBytes(offset.Sum(12).GetAddress(), format_length);
+            var strByte = HamsterCheese.AmongUsMemory.Cheese.mem.ReadBytes(offset.Sum(12).GetAddress(), format_length); 
 
-            //read
-            var readedString = System.Text.Encoding.UTF8.GetString(strByte);
-
-            string _strValue = "";
-
+            StringBuilder sb = new StringBuilder(); 
             for (int i = 0; i < strByte.Length; i += 2)
             {
                 // english = 1byte
-                if (strByte[i + 1] == 0)
-                    _strValue += (char)strByte[i];
+                if (strByte[i + 1] == 0) 
+                    sb.Append((char)strByte[i]); 
                 // korean & unicode = 2byte
                 else
-                    _strValue += System.Text.Encoding.Unicode.GetString(new byte[] { strByte[i], strByte[i + 1] });
+                    sb.Append(System.Text.Encoding.Unicode.GetString(new byte[] { strByte[i], strByte[i + 1] }));
             }
 
-            return _strValue;
+            return sb.ToString();
         }
 
     }
