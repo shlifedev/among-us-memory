@@ -28,6 +28,8 @@ namespace HamsterCheese.AmongUsMemory
         public static string GetAddress(this int value) { return value.ToString("X"); }
         public static string GetAddress(this uint value) { return value.ToString("X"); }
         public static string GetAddress(this IntPtr value) { return value.ToInt32().GetAddress(); }
+        public static string GetAddress(this UIntPtr value) { return value.ToUInt32().GetAddress(); }
+
         public static IntPtr Sum(this IntPtr ptr, IntPtr ptr2) { return (IntPtr)(ptr.ToInt32() + ptr2.ToInt32()); }
         public static IntPtr Sum(this IntPtr ptr, UIntPtr ptr2) { return (IntPtr)(ptr.ToInt32() + (int)ptr2.ToUInt32()); }
         public static IntPtr Sum(this UIntPtr ptr, IntPtr ptr2) { return (IntPtr)(ptr.ToUInt32() + ptr2.ToInt32()); }
@@ -57,6 +59,38 @@ namespace HamsterCheese.AmongUsMemory
             }
 
             return -1;
+        }
+
+        /// <summary>
+        /// i will soon optimize this method. it's temp.
+        /// </summary> 
+        static string ReadString(IntPtr offset)
+        {
+            //string pointer + 8 = length
+            var length = HamsterCheese.AmongUsMemory.Cheese.mem.ReadInt(offset.Sum(8).GetAddress());
+
+            //unit of string is 2byte.
+            var format_length = length * 2;
+
+            //string pointer + 12 = value
+            var strByte = HamsterCheese.AmongUsMemory.Cheese.mem.ReadBytes(offset.Sum(12).GetAddress(), format_length);
+
+            //read
+            var readedString = System.Text.Encoding.UTF8.GetString(strByte);
+
+            string _strValue = "";
+
+            for (int i = 0; i < strByte.Length; i += 2)
+            {
+                // english = 1byte
+                if (strByte[i + 1] == 0)
+                    _strValue += (char)strByte[i];
+                // korean & unicode = 2byte
+                else
+                    _strValue += System.Text.Encoding.Unicode.GetString(new byte[] { strByte[i], strByte[i + 1] });
+            }
+
+            return _strValue;
         }
 
     }
