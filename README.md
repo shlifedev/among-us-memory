@@ -10,7 +10,7 @@
  3. End
  
  
- Example Code
+### Example Code
  ```cs
         static void Main(string[] args)
         {
@@ -34,6 +34,10 @@
         }
  ```
 
+### Read String Pointer
+ Call Utils.ReadString(offset);
+ 
+ 
 You can get all player info ( IsImposter / IsDead / Position .. etc )
 
 ## Example Cheat
@@ -53,6 +57,7 @@ Just use it for study purposes only.
  
 ## PatchNotes
 
+ * 2020-08-26 -- added **readString** function in Utils.cs. now you can read string pointers.
  * 2020-08-24 -- added **getShipstatus** function in cheese.cs
  * 2020-08-20 -- fix wrong data structure
  * 2020-08-20 -- added auto structure generator xml based
