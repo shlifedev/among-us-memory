@@ -45,7 +45,7 @@
                 // Start Your Cheat 
                 CancellationTokenSource cts = new CancellationTokenSource();
                 Task.Factory.StartNew(
-                    UpdateCheat();
+                    UpdateCheat
                 , cts.Token); 
             }
 
