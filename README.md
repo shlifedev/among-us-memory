@@ -11,9 +11,13 @@
  
  
 ### Example Start Cheating.
+ 
  ```cs
-        
+       
+        // Readed Player List
         static List<PlayerData> playerDatas = new List<PlayerData>(); 
+        
+        // Update Your Cheat 
         static void UpdateCheat()
         {
             while (true)
@@ -25,23 +29,24 @@
                 System.Threading.Thread.Sleep(100); 
             }
         }
+        
+        
         static void Main(string[] args)
         {
             // Cheat Init
             if (HamsterCheese.AmongUsMemory.Cheese.Init())
             { 
-                // Update Player Data When Every Game
+                // Update Player Data When Join New Map.
                 HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
                 {
                     playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
                 });
 
-                // Cheat Logic
+                // Start Your Cheat 
                 CancellationTokenSource cts = new CancellationTokenSource();
-                Task.Factory.StartNew(() =>
-                {
+                Task.Factory.StartNew(
                     UpdateCheat();
-                }, cts.Token); 
+                , cts.Token); 
             }
 
             System.Threading.Thread.Sleep(1000000);
