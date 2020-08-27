@@ -52,36 +52,7 @@
             System.Threading.Thread.Sleep(1000000);
         }
         
- ```
- 
- 
-
-### Read String Pointer
- Call Utils.ReadString(offset);
- 
-### How to Detect New Game  
-  ```cs
-        public ShipStatus cur_shipStatus;
-        public ShipStatus prev_shipStatus;
-         
-        void CheckNewGame()
-        {
-            cur_shipStatus = Cheese.GetShipStatus();
-            if (prev_shipStatus.OwnerId != cur_shipStatus.OwnerId)
-            {
-                 prev_shipStatus = cur_shipStatus;
-                 OnNewGame(cur_shipStatus.Type);
-            }
-        }
-        
-        void OnNewGame(uint mapId)
-        {
-             Console.WriteLine("New Map Id : " + mapId);
-        }
-  ```       
-
- 
-You can get all player info ( IsImposter / IsDead / Position .. etc )
+ ``` 
 
 ## Example Cheat
 
