@@ -38,6 +38,11 @@
             }
         }
         
+        // Update Player List EveryGame.
+        static void OnDetectJoinNewGame()
+        {
+            playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+        }
         
         static void Main(string[] args)
         {
@@ -45,10 +50,7 @@
             if (HamsterCheese.AmongUsMemory.Cheese.Init())
             { 
                 // Update Player Data When Join New Map.
-                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
-                {
-                    playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-                });
+                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus(OnDetectJoinNewGame);
 
                 // Start Your Cheat 
                 CancellationTokenSource cts = new CancellationTokenSource();
