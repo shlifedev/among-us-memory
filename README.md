@@ -10,28 +10,48 @@
  3. End
  
  
-### Example Code
+### Example Start Cheating.
+ 
  ```cs
-        static void Main(string[] args)
+       
+        // Readed Player List
+        static List<PlayerData> playerDatas = new List<PlayerData>(); 
+        
+        // Update Your Cheat 
+        static void UpdateCheat()
         {
-            var isAmongUsRunning = HamsterCheese.AmongUsMemory.Cheese.Init();
-            if(isAmongUsRunning)
-            {
-               var players = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-
-               Console.WriteLine("Test Read Player Datas..");
-               while (true)
-               {
-                   foreach (var data in players)
-                   {
-                       Console.WriteLine("find player color : " + data.PlayerInfo.Value.ColorId);
-                       Console.WriteLine("find player position : " + data.GetSyncPosition().x + "," + data.GetSyncPosition().y);
-                   }
-
-               }
-               System.Threading.Thread.Sleep(1000000);
+            while (true)
+            { 
+                foreach (var data in playerDatas)
+                {
+                    Console.WriteLine("Find Player Name :: " + Utils.ReadString(data.PlayerInfo.Value.PlayerName));
+                } 
+                System.Threading.Thread.Sleep(100); 
             }
         }
+        
+        
+        static void Main(string[] args)
+        {
+            // Cheat Init
+            if (HamsterCheese.AmongUsMemory.Cheese.Init())
+            { 
+                // Update Player Data When Join New Map.
+                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
+                {
+                    playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+                });
+
+                // Start Your Cheat 
+                CancellationTokenSource cts = new CancellationTokenSource();
+                Task.Factory.StartNew(
+                    UpdateCheat
+                , cts.Token); 
+            }
+
+            System.Threading.Thread.Sleep(1000000);
+        }
+        
  ```
  
  
