@@ -4,12 +4,14 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace HamsterCheese.AmongUsMemory
 {
     public static class Cheese
     {
+
         public static Memory.Mem mem = new Memory.Mem();
         public static ProcessMemory ProcessMemory = null;
         public static bool Init()
@@ -25,33 +27,76 @@ namespace HamsterCheese.AmongUsMemory
                 return true;
             }
             return false;
-        } 
+        }
 
- 
+        private static ShipStatus prevShipStatus;
+        private static ShipStatus shipStatus;
+        static Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
+        static System.Action<uint> onChangeShipStatus;
+
+
+        static void _ObserveShipStatus()
+        {
+            while (Tokens.ContainsKey("ObserveShipStatus") && Tokens["ObserveShipStatus"].IsCancellationRequested == false)
+            {
+                Thread.Sleep(250);
+                shipStatus = Cheese.GetShipStatus();
+                if (prevShipStatus.OwnerId != shipStatus.OwnerId)
+                {
+                    prevShipStatus = shipStatus;
+                    onChangeShipStatus?.Invoke(shipStatus.Type);
+                    Console.WriteLine("OnShipStatusChanged");
+                }
+                else
+                { 
+
+                }
+            }
+        }
+
+
+        public static void ObserveShipStatus(System.Action<uint> onChangeShipStatus)
+        {
+            CancellationTokenSource cts = new CancellationTokenSource();
+            if (Tokens.ContainsKey("ObserveShipStatus"))
+            {
+                Tokens["ObserveShipStatus"].Cancel();
+                Tokens.Remove("ObserveShipStatus");
+            }
+
+            Tokens.Add("ObserveShipStatus", cts);
+            Cheese.onChangeShipStatus = onChangeShipStatus;
+            Task.Factory.StartNew(_ObserveShipStatus, cts.Token);
+        }
+
         public static ShipStatus GetShipStatus()
         {
 
             ShipStatus shipStatus = new ShipStatus();
             byte[] shipAob = Cheese.mem.ReadBytes(Pattern.ShipStatus_Pointer, Utils.SizeOf<ShipStatus>());
-            var aobStr = MakeAobString(shipAob, 4);
+            var aobStr = MakeAobString(shipAob, 4, "00 00 00 00 ?? ?? ?? ??");
             var aobResults = Cheese.mem.AoBScan(aobStr, true, true);
-            aobResults.Wait();
+            aobResults.Wait(); 
             foreach (var result in aobResults.Result)
             {
-                byte[] resultByte = Cheese.mem.ReadBytes(result.GetAddress(), Utils.SizeOf<ShipStatus>());
-                ShipStatus resultInst = Utils.FromBytes<ShipStatus>(resultByte);
 
+                byte[] resultByte = Cheese.mem.ReadBytes(result.GetAddress(), Utils.SizeOf<ShipStatus>());
+                ShipStatus resultInst = Utils.FromBytes<ShipStatus>(resultByte); 
                 if (resultInst.AllVents != IntPtr.Zero && resultInst.NetId < uint.MaxValue - 10000)
                 {
                     if (resultInst.MapScale < 6470545000000 && resultInst.MapScale > 0.1f)
-                    {
-                        shipStatus = resultInst;
+                    {  
+                            shipStatus = resultInst;  
                     }
                 }
-            }
+            }  
             return shipStatus;
         }
 
+        private static Exception Exception(string v)
+        {
+            throw new NotImplementedException();
+        }
 
         public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
         {
@@ -79,7 +124,7 @@ namespace HamsterCheese.AmongUsMemory
             return aobData;
         }
         public static List<PlayerData> GetAllPlayers()
-        { 
+        {
             List<PlayerData > datas = new List<PlayerData>();
 
             // find player pointer
