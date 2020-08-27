@@ -51,10 +51,9 @@ namespace YourCheese
 
                 // Cheat Logic
                 CancellationTokenSource cts = new CancellationTokenSource();
-                Task.Factory.StartNew(() =>
-                {
-                    UpdateCheat();
-                }, cts.Token); 
+                Task.Factory.StartNew(
+                    UpdateCheat
+                , cts.Token); 
             }
 
             System.Threading.Thread.Sleep(1000000);
