@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace YourCheese
@@ -12,42 +13,50 @@ namespace YourCheese
     {
         static int tableWidth = 75;
 
-        static List<PlayerData> playerDatas;
-
-        static void Main(string[] args)
-        {  
-            HamsterCheese.AmongUsMemory.Cheese.Init(); 
-
-            // Update Player Data When Every Game
-            HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) => 
+       
+        static List<PlayerData> playerDatas = new List<PlayerData>(); 
+        static void UpdateCheat()
+        {
+            while (true)
             {
-                playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers(); 
-                Console.WriteLine("ob");
-            });
-
-            // 
-            Task.Factory.StartNew(() => {
-                while(true)
+                if(playerDatas == null && playerDatas.Count == 0)
+                    return; 
+                Console.WriteLine("Test Read Player Datas..");  
+                PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
+                PrintLine();
+                 
+                foreach (var data in playerDatas)
                 {
-                    Console.WriteLine("Test Read Player Datas..");
-                    PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
+                    if (data.IsLocalPlayer)
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+                    Console.ForegroundColor = ConsoleColor.White;
+
+                    Console.WriteLine(HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName));
                     PrintLine();
-                    foreach (var data in playerDatas)
-                    {
-                        if (data.IsLocalPlayer)
-                            Console.ForegroundColor = ConsoleColor.Green;
-                        PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
-                        Console.ForegroundColor = ConsoleColor.White;
+                } 
+                System.Threading.Thread.Sleep(100); 
+            }
+        }
+        static void Main(string[] args)
+        {
+            // Cheat Init
+            if (HamsterCheese.AmongUsMemory.Cheese.Init())
+            { 
+                // Update Player Data When Every Game
+                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
+                {
+                    playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+                });
 
-                        Console.WriteLine(HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName));
-                        PrintLine();
-                    }
-                    System.Threading.Thread.Sleep(1000);
-                    Console.Clear();
-                }
+                // Cheat Logic
+                CancellationTokenSource cts = new CancellationTokenSource();
+                Task.Factory.StartNew(() =>
+                {
+                    UpdateCheat();
+                }, cts.Token); 
+            }
 
-            });
-     
             System.Threading.Thread.Sleep(1000000);
         }
 
