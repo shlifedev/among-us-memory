@@ -1,15 +1,13 @@
 # AmongUsMemory
-
-**Working Fine 2020.8.12s**
-
-**It only works with the version downloaded from Steam!**
+  You are responsible any disadvantages caused by use this library.  
+  It only works with the version downloaded from Steam
 
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
- 3. End
+ 3. Now, Let's Write Code!
  
- 
+   
 ### Example Start Cheating.
  
  ```cs
@@ -61,13 +59,8 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
-Just use it for study purposes only.
-
-
-## TODO
-
- full automatic cheating (detect map, detect new game.. etc)
- currently require restart cheat every game.
+Just use it for study purposes only. never abuse!
+ 
  
 ## PatchNotes
 
