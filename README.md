@@ -1,7 +1,14 @@
+ 
+
 # AmongUsMemory
+![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
+
+
   You are responsible any disadvantages caused by use this library.  
   It only works with the version downloaded from Steam  
   And, Use only for study. never abuse!
+  
+  
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
