@@ -22,16 +22,20 @@ namespace YourCheese
             { 
                 Console.Clear();
                 Console.WriteLine("Test Read Player Datas..");
-                PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
+                PrintRow("offset", "Name", "OwnerId", "PlayerId", "spawnid", "spawnflag");
                 PrintLine();
 
                 foreach (var data in playerDatas)
                 {
-                   if (data.IsLocalPlayer)
-                       Console.ForegroundColor = ConsoleColor.Green;
-                   PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+                    if (data.IsLocalPlayer)
+                        Console.ForegroundColor = ConsoleColor.Green;
+                    if (data.PlayerInfo.Value.IsDead == 1)
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                    var Name = HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName);
+                   PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{Name}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
                    Console.ForegroundColor = ConsoleColor.White; 
-                   Console.WriteLine(HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName));
+            
                    PrintLine();
                 }  
                 System.Threading.Thread.Sleep(100);
