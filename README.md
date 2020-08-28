@@ -1,15 +1,23 @@
 # AmongUsMemory
-
-**Working Fine 2020.8.12s**
-
-**It only works with the version downloaded from Steam!**
+  You are responsible any disadvantages caused by use this library.  
+  It only works with the version downloaded from Steam
 
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
- 3. End
+ 3. Now, Let's Write Code!
  
  
+ 
+## ChangeLog
+
+ * 2020-08-27 -- added **ObserveShipStatus**, you can detect join new game/new map
+ * 2020-08-26 -- added **readString** function in Utils.cs. now you can read string pointers.
+ * 2020-08-24 -- added **getShipstatus** function in cheese.cs
+ * 2020-08-20 -- fix wrong data structure
+ * 2020-08-20 -- added auto structure generator xml based
+ 
+   
 ### Example Start Cheating.
  
  ```cs
@@ -30,6 +38,11 @@
             }
         }
         
+        // Update Player List EveryGame.
+        static void OnDetectJoinNewGame()
+        {
+            playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+        }
         
         static void Main(string[] args)
         {
@@ -37,10 +50,7 @@
             if (HamsterCheese.AmongUsMemory.Cheese.Init())
             { 
                 // Update Player Data When Join New Map.
-                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
-                {
-                    playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-                });
+                HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus(OnDetectJoinNewGame);
 
                 // Start Your Cheat 
                 CancellationTokenSource cts = new CancellationTokenSource();
@@ -61,18 +71,6 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
-Just use it for study purposes only.
-
-
-## TODO
-
- full automatic cheating (detect map, detect new game.. etc)
- currently require restart cheat every game.
+Just use it for study purposes only. never abuse!
  
-## PatchNotes
-
- * 2020-08-26 -- added **readString** function in Utils.cs. now you can read string pointers.
- * 2020-08-24 -- added **getShipstatus** function in cheese.cs
- * 2020-08-20 -- fix wrong data structure
- * 2020-08-20 -- added auto structure generator xml based
  
