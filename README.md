@@ -1,7 +1,7 @@
 # AmongUsMemory
   You are responsible any disadvantages caused by use this library.  
-  It only works with the version downloaded from Steam
-
+  It only works with the version downloaded from Steam  
+  And, Use only for study. never abuse!
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
@@ -73,6 +73,5 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
-Just use it for study purposes only. never abuse!
  
  
