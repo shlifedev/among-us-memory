@@ -63,6 +63,8 @@
         }
         
  ``` 
+ 
+ You can get/set player memory. ex) `IsImposter` `Position` `IsDead` `InVent` ..etc
 
 ## Example Cheat
 
