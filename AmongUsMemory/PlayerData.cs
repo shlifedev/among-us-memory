@@ -1,7 +1,10 @@
 ﻿
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace HamsterCheese.AmongUsMemory
 {
@@ -21,6 +24,8 @@ namespace HamsterCheese.AmongUsMemory
         public IntPtr offset_ptr;
         public string offset_str;
 
+
+        Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
 
 
 
@@ -94,17 +99,49 @@ namespace HamsterCheese.AmongUsMemory
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString());
         }
 
-
-        public void ObserveState()
+        
+        
+        public void StopObserveState()
         {
-            if (PlayerInfo.HasValue)
+            var key = Tokens.ContainsKey("ObserveState");
+            if(key)
             {
-                if (observe_dieFlag == false && PlayerInfo.Value.IsDead == 1)
+                if (Tokens["ObserveState"].IsCancellationRequested == false)
                 {
-                    observe_dieFlag = true;
-                    onDie?.Invoke(Position, PlayerInfo.Value.ColorId);
+                    Tokens["ObserveState"].Cancel();
+                    Tokens.Remove("ObserveState");
                 }
+            } 
+        }
+        public void StartObserveState()
+        {
+            if(Tokens.ContainsKey("ObserveState"))
+            {
+                Console.WriteLine("Already Observed!");
+                return;
             }
+            else
+            {
+                CancellationTokenSource cts = new CancellationTokenSource(); 
+                Task.Factory.StartNew(() =>
+                {
+                    while (true)
+                    {
+                        if (PlayerInfo.HasValue)
+                        {
+                            if (observe_dieFlag == false && PlayerInfo.Value.IsDead == 1)
+                            {
+                                observe_dieFlag = true;
+                                onDie?.Invoke(Position, PlayerInfo.Value.ColorId);
+                            }
+                        }
+                        System.Threading.Thread.Sleep(25); 
+                    }
+                }, cts.Token);
+
+                Tokens.Add("ObserveState", cts);
+            }
+          
         }
 
         public Vector2 Position

@@ -17,25 +17,24 @@ namespace YourCheese
         static List<PlayerData> playerDatas = new List<PlayerData>(); 
         static void UpdateCheat()
         {
+       
             while (true)
-            {
-                if(playerDatas == null && playerDatas.Count == 0)
-                    return; 
-                Console.WriteLine("Test Read Player Datas..");  
+            { 
+                Console.Clear();
+                Console.WriteLine("Test Read Player Datas..");
                 PrintRow("offset", "netId", "OwnerId", "PlayerId", "spawnid", "spawnflag");
                 PrintLine();
-                 
+
                 foreach (var data in playerDatas)
                 {
-                    if (data.IsLocalPlayer)
-                        Console.ForegroundColor = ConsoleColor.Green;
-                    PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
-                    Console.ForegroundColor = ConsoleColor.White;
-
-                    Console.WriteLine(HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName));
-                    PrintLine();
-                } 
-                System.Threading.Thread.Sleep(100); 
+                   if (data.IsLocalPlayer)
+                       Console.ForegroundColor = ConsoleColor.Green;
+                   PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{data.Instance.NetId}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+                   Console.ForegroundColor = ConsoleColor.White; 
+                   Console.WriteLine(HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName));
+                   PrintLine();
+                }  
+                System.Threading.Thread.Sleep(100);
             }
         }
         static void Main(string[] args)
@@ -46,7 +45,26 @@ namespace YourCheese
                 // Update Player Data When Every Game
                 HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
                 {
+                    
+                    foreach(var player in playerDatas)
+                    {
+                        player.StopObserveState();
+                    }
+
+
                     playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
+                    
+                  
+                    foreach (var player in playerDatas)
+                    {
+                        player.onDie += (pos, colorId) => {
+                            Console.WriteLine("OnPlayerDied! Color ID :" + colorId);
+                        }; 
+                        // player state check
+                        player.StartObserveState();
+                    }
+
+                
                 });
 
                 // Cheat Logic
@@ -75,6 +93,8 @@ namespace YourCheese
             }
 
             Console.WriteLine(row);
+
+            
         }
 
         static string AlignCentre(string text, int width)
