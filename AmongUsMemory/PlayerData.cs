@@ -28,6 +28,18 @@ namespace HamsterCheese.AmongUsMemory
         Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
 
 
+        public void ObserveState()
+        {
+            if (PlayerInfo.HasValue)
+            {
+                if (observe_dieFlag == false && PlayerInfo.Value.IsDead == 1)
+                {
+                    observe_dieFlag = true;
+                    onDie?.Invoke(Position, PlayerInfo.Value.ColorId);
+                }
+            }
+        }
+
 
         /// <summary>
         /// PlayerInfo 가져오기 

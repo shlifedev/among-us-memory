@@ -20,11 +20,8 @@ C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\obj\Debug\A
 C:\Users\shlif\OneDrive\Documents\GitHub\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.pdb
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\bin\Debug\AmongUsMemory.dll
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\bin\Debug\AmongUsMemory.pdb
-C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\bin\Debug\Memory.pdb
-C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\bin\Debug\Memory.xml
-C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.csprojAssemblyReference.cache
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.csproj.CoreCompileInputs.cache
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.csproj.CopyComplete
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.dll
 C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.pdb
-C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\bin\Debug\Memory.dll
+C:\Users\shlif\OneDrive\Desktop\Github\AmongUsMemory\AmongUsMemory\obj\Debug\AmongUsMemory.csprojAssemblyReference.cache
