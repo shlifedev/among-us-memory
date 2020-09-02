@@ -4,9 +4,9 @@
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
 
-  You are responsible any disadvantages caused by use this library.  
+  You are responsible any disadvantages caused by use this src.
   It only works with the version downloaded from Steam  
-  And, Use only for study. never abuse!
+  And, Use only for study. never abuse! please..
   
   
 ## How to Use
@@ -75,7 +75,7 @@
 
 ## Example Cheat
 
- this is my private cheat
+ this is my private cheat !!
  ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG) 
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
