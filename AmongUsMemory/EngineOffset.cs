@@ -14,4 +14,5 @@ namespace HamsterCheese.AmongUsMemory
         public static string PlayerControl_GetData = "55 8B EC 80 3D B5 5A ??";
         
     }
-}
+} 
+  
