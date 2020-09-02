@@ -17,7 +17,8 @@
  
  
 ## ChangeLog
- * 2020-09-02 -- offset updated 2020.8.31 version
+ * 2020-09-03 -- offset updated 2020.9.01s version
+ * 2020-09-02 -- offset updated 2020.8.31s version
  * 2020-08-27 -- added **ObserveShipStatus**, you can detect join new game/new map
  * 2020-08-26 -- added **readString** function in Utils.cs. now you can read string pointers.
  * 2020-08-24 -- added **getShipstatus** function in cheese.cs
