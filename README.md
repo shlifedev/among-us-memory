@@ -6,8 +6,9 @@
 
   You are responsible any disadvantages caused by use this src.
   It only works with the version downloaded from Steam  
-  And, Use only for study. never abuse! please..
+  And, Use only for study. never abuse! please.. 
   
+  if game updated then require offset update. 
   
 ## How to Use
  1. Download Source Code
