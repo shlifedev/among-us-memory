@@ -8,7 +8,7 @@ namespace HamsterCheese.AmongUsMemory
 {
     public static class Utils
     {
-        static Dictionary<(Type, string), int> _offsetMap = new Dictionary<(Type, string), int>();
+		static Dictionary<(Type, string), int> _offsetMap = new Dictionary<(Type, string), int>();
 
         public static T FromBytes<T>(byte[] bytes)
         {
