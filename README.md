@@ -82,5 +82,8 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
- 
+
+## For Net Framework 4.5
+
+[Here](https://github.com/shlifedev/AmongUsMemory/tree/net-framework-4.5)
  
