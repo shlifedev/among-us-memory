@@ -8,7 +8,7 @@
   **It only works with the version downloaded from Steam** 
   And, Use only for study. never abuse! please.. 
   
-  if game updated then require offset update. 
+  if game updated then require offset update. contact me.
   
   ----------------------
 ## How to Use
