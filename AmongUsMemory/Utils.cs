@@ -63,7 +63,7 @@ namespace HamsterCheese.AmongUsMemory
         }
 
         /// <summary>
-        /// i will soon optimize this method. it's temp.
+        /// Support All Language.
         /// </summary> 
         public static string ReadString(IntPtr offset)
         {
