@@ -7,7 +7,7 @@ namespace HamsterCheese.AmongUsMemory
         /// </summary>
         public static string PlayerControl_Pointer = "GameAssembly.dll+DA050C";  //GameAssembly.dll+E22AE8
         public static string ShipStatus_Pointer = "GameAssembly.dll+DA04CC";
-        public static string ShipStatus_Aob = "GameAssembly.dll+DA04CC";
+        public static string AmongusClient_Pointer = "GameAssembly.dll+DA054C";
         /// <summary>
         /// Get PlayerControl.Get_Data();
         /// </summary>
