@@ -1,5 +1,3 @@
- 
-
 # AmongUsMemory
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
@@ -16,9 +14,8 @@
  2. Add Reference AmongUsMemory Your Project 
  3. Now, Let's Write Code!
  
- 
- 
 ## ChangeLog
+ * 2020-09-15 -- offset updated 2020.9.9s version
  * 2020-09-03 -- offset updated 2020.9.01s version
  * 2020-09-02 -- offset updated 2020.8.31s version
  * 2020-08-27 -- added **ObserveShipStatus**, you can detect join new game/new map
@@ -83,5 +80,6 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
+ i will post tutorial how to update EngineOffset.cs
  
  
