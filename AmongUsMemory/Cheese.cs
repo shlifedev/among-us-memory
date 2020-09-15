@@ -129,27 +129,8 @@ namespace HamsterCheese.AmongUsMemory
 
             // find player pointer
             byte[] playerAoB = Cheese.mem.ReadBytes(Pattern.PlayerControl_Pointer, Utils.SizeOf<PlayerControl>());
-            int cnt = 0;
             // aob pattern
-            string aobData = "";
-            // read 4byte aob pattern.
-            foreach (var _byte in playerAoB)
-            {
-                if (_byte < 16)
-                    aobData += "0" + _byte.ToString("X");
-                else
-                    aobData += _byte.ToString("X");
-
-                if (cnt + 1 != 4)
-                    aobData += " ";
-
-                cnt++;
-                if (cnt == 4)
-                {
-                    aobData += " ?? ?? ?? ??";
-                    break;
-                }
-            }
+            string aobData = MakeAobString(playerAoB, 4, "?? ?? ?? ??"); 
             // get result 
             var result = Cheese.mem.AoBScan(aobData, true, true);
             result.Wait();

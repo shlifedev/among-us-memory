@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ namespace HamsterCheese.AmongUsMemory
 {
     public static class Utils
     {
-		static Dictionary<(Type, string), int> _offsetMap = new Dictionary<(Type, string), int>();
+        static Dictionary<(Type, string), int> _offsetMap = new Dictionary<(Type, string), int>();
 
         public static T FromBytes<T>(byte[] bytes)
         {
@@ -63,7 +63,7 @@ namespace HamsterCheese.AmongUsMemory
         }
 
         /// <summary>
-        /// i will soon optimize this method. it's temp.
+        /// Support All Language.
         /// </summary> 
         public static string ReadString(IntPtr offset)
         {

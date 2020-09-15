@@ -1,23 +1,21 @@
- 
-
 # AmongUsMemory
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
 
-  You are responsible any disadvantages caused by use this src.
-  It only works with the version downloaded from Steam  
+ You are responsible any disadvantages caused by use this src.
+  **It only works with the version downloaded from Steam** 
   And, Use only for study. never abuse! please.. 
   
-  if game updated then require offset update. 
+  if game updated then require offset update. contact me.
   
+  ----------------------
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
  3. Now, Let's Write Code!
  
- 
- 
 ## ChangeLog
+ * 2020-09-15 -- offset updated 2020.9.9s version
  * 2020-09-03 -- offset updated 2020.9.01s version
  * 2020-09-02 -- offset updated 2020.8.31s version
  * 2020-08-27 -- added **ObserveShipStatus**, you can detect join new game/new map
@@ -82,8 +80,13 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
-
 ## For Net Framework 4.5
 
 [Here](https://github.com/shlifedev/AmongUsMemory/tree/net-framework-4.5)
+
+
+
+ i will post tutorial how to update EngineOffset.cs with il2cpp dumper + hax editor or cheat engine
+ 
+ 
  
