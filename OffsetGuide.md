@@ -2,7 +2,7 @@
  still writing.
  
  
- ### how to find playercontro.get_data method signature pattern
+ ### how to find playercontro.get_data method signature pattern with il2cpp dumper
  
  1. download **il2cppdumper** latest https://github.com/Perfare/Il2CppDumper, and **hxd** https://mh-nexus.de/en/downloads.php?product=HxD20
  2. target binary : GameAssembly.dll dump it.
@@ -18,4 +18,14 @@
  8. copy **7bytes** (00 00 00 00 00 00 00)
  9. open EngineOffset.cs and copy it (00 00 00 00 00 00 00 ??)
  
+### how to find playercontro.get_data method signature pattern with cheat engine 
  
+  still writing
+
+### how to find playercontroll pointer with cheatengine
+
+  still writing
+  
+### how to find shipstatus pointer with cheatengine
+
+  still writing
