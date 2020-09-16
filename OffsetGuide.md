@@ -32,10 +32,10 @@
  2. **Mono -> Activate mono features**  (top menu)
  3. **Mono -> Dissect Mono**  (top men
  4. Goto **Assembly-Chsarp.dll -> PlayerControl -> methods -> get_data()** right click and Click **Jit**
- 5. Ctrl+C And Copy Address.
- ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_03.PNG?raw=true
- 6. Goto Copied Address in HexViewer and **Copy 7bytes**, and Update **EngineOffset.cs**
- ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_04.PNG?raw=true
+ 5. Ctrl+C And Copy Address.  
+![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_03.PNG?raw=true)
+ 6. Goto Copied Address in HexViewer and **Copy 7bytes**, and Update **EngineOffset.cs**  
+![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_04.PNG?raw=true)
  
  
  Very Easy :)
