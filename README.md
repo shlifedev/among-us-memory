@@ -18,7 +18,7 @@
 ## Offset Update Guide
 https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md
 
-here :)
+here :) it's very easy. not need il2cpp dumper
    
    
 ### Example Start Cheating.
