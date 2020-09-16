@@ -80,6 +80,9 @@
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
  
- i will post tutorial how to update EngineOffset.cs with il2cpp dumper + hax editor or cheat engine
- 
+## Offset Update Guide
+https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md
+
+here :)
+
  
