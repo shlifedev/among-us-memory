@@ -22,7 +22,8 @@
  
  ## ShipStatus Static Pointer Offset
  
- Same as PlayerControl. (But, Must be try ingame. can't find a static offset in the lobby.)
+ Same as PlayerControl. Find the ship status on the mono dissector!  
+ (But, Must be try ingame. can't find a static offset in the lobby.)
  
  
  ## PlayerControl.getData 
