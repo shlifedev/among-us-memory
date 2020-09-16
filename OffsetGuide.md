@@ -16,7 +16,7 @@
  ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_01.PNG?raw=true)
  6. Copy value and search 4bytes value type
  7. Good, Now you can find instance static pointer offset in searched list :)
- ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_02.PNG?raw=true
+ ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_02.PNG?raw=true)
  8. Update EngineOffset.cs
  
  
