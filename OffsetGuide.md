@@ -9,8 +9,8 @@
 
  ## PlayerControl Static Pointer Offset
  1. open cheat engine, and select among us proccess.
- 2. **Mono -> Activate mono features**  (top menu)
- 3. **Mono -> Dissect Mono**  (top menu)
+ 2. **Mono -> Activate mono features** In CheatEngine(top menu)
+ 3. **Mono -> Dissect Mono**   In CheatEngine (top menu)
  4. **Goto Assembly-Chsarp.dll -> PlayerControl and RightClick -> Find Instance Of Class**
  5. Copy any instance and add your cheat table
  ![img](https://github.com/shlifedev/AmongUsMemory/blob/master/guide_01.PNG?raw=true)
