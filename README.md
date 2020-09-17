@@ -6,20 +6,16 @@
   **It only works with the version downloaded from Steam** 
   And, Use only for study. never abuse! please.. 
   
-  if game updated then require offset update. contact me.
-  
+  if game updated then require offset update.   
+  offset update guide : https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md  
+  here :) it's very easy. not need il2cpp dumper
+   
   ----------------------
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
  3. Now, Let's Write Code!
- 
- 
-## Offset Update Guide
-https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md
-
-here :) it's very easy. not need il2cpp dumper
-   
+  
    
 ### Example Start Cheating.
  
@@ -71,7 +67,7 @@ here :) it's very easy. not need il2cpp dumper
 
 ## Example Cheat
 
- this is my private cheat !!
+ This is my private cheat :)
  ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG) 
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
  
