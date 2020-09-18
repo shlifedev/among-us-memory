@@ -2,10 +2,13 @@
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
 You are responsible for any disadvantages caused by using this src.  
-It only works with the version downloaded from Steam And, only for study. Do not abuse it please!!  
+It only works with the version downloaded from Steam. 
+
+Please use only for study. Do not abuse it! Please!  
 After the game is updated, it will require offset update.  
-offset update guide : (link)  
-here :) it's very easy. does not require il2cpp dumper.  
+
+offset update guide here : https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md  
+it's very easy. does not require il2cpp dumper.  
 
   ----------------------
 ## How to Use
