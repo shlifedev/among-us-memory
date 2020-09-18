@@ -27,6 +27,7 @@
  
  
  ## PlayerControl.getData 
+ (Previously, I used it by dumping with il2cpp, so I use signature search.)
  
  1. open cheat engine, and select among us proccess.
  2. **Mono -> Activate mono features**  (top menu)
