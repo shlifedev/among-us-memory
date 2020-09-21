@@ -1,6 +1,8 @@
 # AmongUsMemory
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
+**Don't ask me how to draw a radar :)**
+
 You are responsible for any disadvantages caused by using this src.  
 It only works with the version downloaded from Steam. 
 
