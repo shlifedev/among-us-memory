@@ -185,7 +185,7 @@ namespace HamsterCheese.AmongUsMemory
         }
 
 
-        public Vector2 GetSyncPosition()
+        Vector2 GetSyncPosition()
         {
             try
             {
@@ -211,7 +211,7 @@ namespace HamsterCheese.AmongUsMemory
                 return Vector2.Zero;
             }
         }
-        public Vector2 GetMyPosition()
+        Vector2 GetMyPosition()
         {
             try
             {
