@@ -28,9 +28,12 @@ namespace YourCheese
                 foreach (var data in playerDatas)
                 {
                     if (data.IsLocalPlayer)
+                    {
                         Console.ForegroundColor = ConsoleColor.Green;
+                        data.WriteMemory_SetNameTextColor(new Color(0,1,0,1));
+                    }
                     if (data.PlayerInfo.Value.IsDead == 1)
-                        Console.ForegroundColor = ConsoleColor.Red; 
+                        Console.ForegroundColor = ConsoleColor.Red;
 
                     var Name = HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName);
                    PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{Name}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
