@@ -86,12 +86,18 @@ namespace HamsterCheese.AmongUsMemory
             var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
         }
-
-        public void WriteMemory_Impostor(byte value)
+        public void WriteMemory_ColorID(byte value)
         {
-            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsImpostor"); 
+            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "ColorId"); 
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
+        public void WriteMemory_Impostor(byte value)
+        {
+            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsImpostor");
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
+        }
+
+       
         /// <summary>
         /// Set Player Dead State.
         /// </summary>
@@ -110,9 +116,21 @@ namespace HamsterCheese.AmongUsMemory
             var targetPointer = Utils.GetMemberPointer(offset_ptr, typeof(PlayerControl), "killTimer");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString());
         }
+        /// <summary>
+        /// Set Player KillTimer
+        /// </summary>
+        /// <param name="value"></param>
+        public void WriteMemory_SetNameTextColor(Color value)
+        {
+            var targetPointer = Utils.GetMemberPointer(Instance.nameText, typeof(TextRenderer), "Color");
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.r.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer+4).GetAddress(), "float", value.g.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer+8).GetAddress(), "float", value.b.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer+12).GetAddress(), "float", value.a.ToString("0.0"));
+        }
 
-        
-        
+
+
         public void StopObserveState()
         {
             var key = Tokens.ContainsKey("ObserveState");
