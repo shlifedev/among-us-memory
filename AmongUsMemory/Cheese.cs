@@ -149,8 +149,8 @@ namespace HamsterCheese.AmongUsMemory
                     datas.Add(new PlayerData()
                     {
                         Instance = PlayerControl,
-                        offset_str = x.GetAddress(),
-                        offset_ptr = new IntPtr((int)x)
+                        PlayerControllPTROffset = x.GetAddress(),
+                        PlayerControllPTR = new IntPtr((int)x)
                     });
                 }
             }
