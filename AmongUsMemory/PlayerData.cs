@@ -55,20 +55,20 @@ namespace HamsterCheese.AmongUsMemory
                     PlayerInfoPTR = ptr.GetAddress();
                     PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(PlayerInfoPTR, Utils.SizeOf<PlayerInfo>()));
                     PlayerInfoPTROffset = new IntPtr(ptr);
-                    m_pInfo = pInfo;
-                    return m_pInfo;
+                    playerInfo = pInfo;
+                    return playerInfo;
 
                 }
                 else
                 {
                     PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(PlayerInfoPTR, Utils.SizeOf<PlayerInfo>()));
-                    m_pInfo = pInfo;
-                    return m_pInfo;
+                    playerInfo = pInfo;
+                    return playerInfo;
                 }
 
             }
         }
-        private PlayerInfo? m_pInfo = null;
+        private PlayerInfo? playerInfo = null;
 
         
         public LightSource LightSource
@@ -87,6 +87,7 @@ namespace HamsterCheese.AmongUsMemory
             var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
         }
+
         /// <summary>
         /// Set Player Impostor State. *Client Side
         /// </summary>
