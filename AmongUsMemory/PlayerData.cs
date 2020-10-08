@@ -87,11 +87,10 @@ namespace HamsterCheese.AmongUsMemory
             var targetPointer = Utils.GetMemberPointer(Instance.myLight, typeof(LightSource), "LightRadius");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
         }
-        public void WriteMemory_ColorID(byte value)
-        {
-            var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "ColorId"); 
-            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
-        }
+        /// <summary>
+        /// Set Player Impostor State. *Client Side
+        /// </summary>
+        /// <param name="value"></param> 
         public void WriteMemory_Impostor(byte value)
         {
             var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "IsImpostor");
@@ -100,7 +99,7 @@ namespace HamsterCheese.AmongUsMemory
 
        
         /// <summary>
-        /// Set Player Dead State.
+        /// Set Player Dead State. *Client Side
         /// </summary>
         /// <param name="value"></param>
         public void WriteMemory_IsDead(byte value)
