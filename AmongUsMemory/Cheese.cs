@@ -95,11 +95,7 @@ namespace HamsterCheese.AmongUsMemory
             }  
             return shipStatus;
         }
-
-        private static Exception Exception(string v)
-        {
-            throw new NotImplementedException();
-        }
+         
 
         public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
         {
