@@ -72,6 +72,11 @@ namespace HamsterCheese.AmongUsMemory
             Task.Factory.StartNew(_ObserveShipStatus, cts.Token);
         }
 
+
+        /// <summary>
+        /// Get Ship Status From AmongUs Proccess
+        /// </summary>
+        /// <returns></returns>
         public static ShipStatus GetShipStatus()
         { 
             ShipStatus shipStatus = new ShipStatus();
@@ -122,6 +127,11 @@ namespace HamsterCheese.AmongUsMemory
             }
             return aobData;
         }
+
+        /// <summary>
+        /// Get All Players From AmongUs Proccess
+        /// </summary>
+        /// <returns></returns>
         public static List<PlayerData> GetAllPlayers()
         {
             List<PlayerData > datas = new List<PlayerData>();
