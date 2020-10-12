@@ -31,8 +31,8 @@ namespace HamsterCheese.AmongUsMemory
 
         private static ShipStatus prevShipStatus;
         private static ShipStatus shipStatus;
-        static Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
-        static System.Action<uint> onChangeShipStatus;
+        private static Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
+        private static System.Action<uint> onChangeShipStatus;
 
 
         static void _ObserveShipStatus()
@@ -54,7 +54,10 @@ namespace HamsterCheese.AmongUsMemory
             }
         }
 
-
+        /// <summary>
+        /// Subscribe shipstatus changed.
+        /// </summary>
+        /// <param name="onChangeShipStatus"></param>
         public static void ObserveShipStatus(System.Action<uint> onChangeShipStatus)
         {
             CancellationTokenSource cts = new CancellationTokenSource();
