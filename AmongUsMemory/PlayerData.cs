@@ -14,13 +14,26 @@ namespace HamsterCheese.AmongUsMemory
         private bool observe_dieFlag = false;
         #endregion
 
+
+        /// <summary>
+        /// Player Control Instance
+        /// </summary>
         public PlayerControl Instance;
+
+        /// <summary>
+        /// Player Die Event
+        /// </summary>
         public System.Action<Vector2, byte> onDie;  
 
-        private string PlayerInfoPTR = null;
+        /// <summary>
+        /// Player Info Pointer&Offset
+        /// </summary>
+        public string PlayerInfoPTR = null;
         public IntPtr PlayerInfoPTROffset;
 
-
+        /// <summary>
+        /// Player Controll Pointer&Offset
+        /// </summary>
         public IntPtr PlayerControllPTR;
         public string PlayerControllPTROffset;
 
