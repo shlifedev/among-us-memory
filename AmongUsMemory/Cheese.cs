@@ -31,8 +31,8 @@ namespace HamsterCheese.AmongUsMemory
 
         private static ShipStatus prevShipStatus;
         private static ShipStatus shipStatus;
-        static Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
-        static System.Action<uint> onChangeShipStatus;
+        private static Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
+        private static System.Action<uint> onChangeShipStatus;
 
 
         static void _ObserveShipStatus()
@@ -54,7 +54,10 @@ namespace HamsterCheese.AmongUsMemory
             }
         }
 
-
+        /// <summary>
+        /// Subscribe shipstatus changed.
+        /// </summary>
+        /// <param name="onChangeShipStatus"></param>
         public static void ObserveShipStatus(System.Action<uint> onChangeShipStatus)
         {
             CancellationTokenSource cts = new CancellationTokenSource();
@@ -69,6 +72,11 @@ namespace HamsterCheese.AmongUsMemory
             Task.Factory.StartNew(_ObserveShipStatus, cts.Token);
         }
 
+
+        /// <summary>
+        /// Get Ship Status From AmongUs Proccess
+        /// </summary>
+        /// <returns></returns>
         public static ShipStatus GetShipStatus()
         { 
             ShipStatus shipStatus = new ShipStatus();
@@ -92,11 +100,7 @@ namespace HamsterCheese.AmongUsMemory
             }  
             return shipStatus;
         }
-
-        private static Exception Exception(string v)
-        {
-            throw new NotImplementedException();
-        }
+         
 
         public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
         {
@@ -123,6 +127,11 @@ namespace HamsterCheese.AmongUsMemory
             }
             return aobData;
         }
+
+        /// <summary>
+        /// Get All Players From AmongUs Proccess
+        /// </summary>
+        /// <returns></returns>
         public static List<PlayerData> GetAllPlayers()
         {
             List<PlayerData > datas = new List<PlayerData>();
@@ -149,8 +158,8 @@ namespace HamsterCheese.AmongUsMemory
                     datas.Add(new PlayerData()
                     {
                         Instance = PlayerControl,
-                        offset_str = x.GetAddress(),
-                        offset_ptr = new IntPtr((int)x)
+                        PlayerControllPTROffset = x.GetAddress(),
+                        PlayerControllPTR = new IntPtr((int)x)
                     });
                 }
             }

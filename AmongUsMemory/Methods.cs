@@ -10,7 +10,9 @@ namespace HamsterCheese. AmongUsMemory
 {
     public class CallAttribute : System.Attribute { }
     public class InitAttribute : System.Attribute { }
-
+    /// <summary>
+    /// AmongUs Methods Init&Call Manager
+    /// </summary>
     public static class Methods
     {
         #region PlayerControl.GetData

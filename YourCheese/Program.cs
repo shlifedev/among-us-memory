@@ -28,12 +28,17 @@ namespace YourCheese
                 foreach (var data in playerDatas)
                 {
                     if (data.IsLocalPlayer)
+                    {
+                        
                         Console.ForegroundColor = ConsoleColor.Green;
+                        //set your player name text renderer color
+                        data.WriteMemory_SetNameTextColor(new Color(0,1,0,1)); 
+                    }
                     if (data.PlayerInfo.Value.IsDead == 1)
-                        Console.ForegroundColor = ConsoleColor.Red; 
+                        Console.ForegroundColor = ConsoleColor.Red;
 
                     var Name = HamsterCheese.AmongUsMemory.Utils.ReadString(data.PlayerInfo.Value.PlayerName);
-                   PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.offset_str}", $"{Name}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
+                   PrintRow($"{(data.IsLocalPlayer == true ? "Me->" : "")}{data.PlayerControllPTROffset}", $"{Name}", $"{data.Instance.OwnerId}", $"{data.Instance.PlayerId}", $"{data.Instance.SpawnId}", $"{data.Instance.SpawnFlags}");
                    Console.ForegroundColor = ConsoleColor.White; 
             
                    PrintLine();
@@ -50,15 +55,15 @@ namespace YourCheese
                 HamsterCheese.AmongUsMemory.Cheese.ObserveShipStatus((x) =>
                 {
                     
-                    foreach(var player in playerDatas)
-                    {
-                        player.StopObserveState();
-                    }
+                    //stop observe state for init. 
+                    foreach(var player in playerDatas) 
+                        player.StopObserveState(); 
 
 
                     playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
                     
                   
+                 
                     foreach (var player in playerDatas)
                     {
                         player.onDie += (pos, colorId) => {

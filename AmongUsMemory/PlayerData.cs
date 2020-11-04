@@ -14,20 +14,34 @@ namespace HamsterCheese.AmongUsMemory
         private bool observe_dieFlag = false;
         #endregion
 
+
+        /// <summary>
+        /// Player Control Instance
+        /// </summary>
         public PlayerControl Instance;
-        public System.Action<Vector2, byte> onDie; 
-        public IntPtr PlayerControl_GetData_Offset = IntPtr.Zero;
 
+        /// <summary>
+        /// Player Die Event
+        /// </summary>
+        public System.Action<Vector2, byte> onDie;  
 
-        private string playerInfoOffset = null;
-        public IntPtr playerInfoOffset_ptr;
-        public IntPtr offset_ptr;
-        public string offset_str;
+        /// <summary>
+        /// Player Info Pointer&Offset
+        /// </summary>
+        public string PlayerInfoPTR = null;
+        public IntPtr PlayerInfoPTROffset;
+
+        /// <summary>
+        /// Player Controll Pointer&Offset
+        /// </summary>
+        public IntPtr PlayerControllPTR;
+        public string PlayerControllPTROffset;
 
 
         Dictionary<string, CancellationTokenSource> Tokens = new Dictionary<string, CancellationTokenSource>();
 
 
+        [Obsolete] 
         public void ObserveState()
         {
             if (PlayerInfo.HasValue)
@@ -48,26 +62,26 @@ namespace HamsterCheese.AmongUsMemory
         {
             get
             {
-                if (playerInfoOffset_ptr == IntPtr.Zero)
+                if (PlayerInfoPTROffset == IntPtr.Zero)
                 {
-                    var ptr =  Methods.Call_PlayerControl_GetData(this.offset_ptr);
-                    playerInfoOffset = ptr.GetAddress();
-                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
-                    playerInfoOffset_ptr = new IntPtr(ptr);
-                    m_pInfo = pInfo;
-                    return m_pInfo;
+                    var ptr =  Methods.Call_PlayerControl_GetData(this.PlayerControllPTR);
+                    PlayerInfoPTR = ptr.GetAddress();
+                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(PlayerInfoPTR, Utils.SizeOf<PlayerInfo>()));
+                    PlayerInfoPTROffset = new IntPtr(ptr);
+                    playerInfo = pInfo;
+                    return playerInfo;
 
                 }
                 else
                 {
-                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(playerInfoOffset, Utils.SizeOf<PlayerInfo>()));
-                    m_pInfo = pInfo;
-                    return m_pInfo;
+                    PlayerInfo pInfo = Utils.FromBytes<PlayerInfo>(Cheese.mem.ReadBytes(PlayerInfoPTR, Utils.SizeOf<PlayerInfo>()));
+                    playerInfo = pInfo;
+                    return playerInfo;
                 }
 
             }
         }
-        private PlayerInfo? m_pInfo = null;
+        private PlayerInfo? playerInfo = null;
 
         
         public LightSource LightSource
@@ -87,18 +101,24 @@ namespace HamsterCheese.AmongUsMemory
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString("0.0"));
         }
 
+        /// <summary>
+        /// Set Player Impostor State. *Client Side
+        /// </summary>
+        /// <param name="value"></param> 
         public void WriteMemory_Impostor(byte value)
         {
-            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsImpostor"); 
+            var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "IsImpostor");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
+
+       
         /// <summary>
-        /// Set Player Dead State.
+        /// Set Player Dead State. *Client Side
         /// </summary>
         /// <param name="value"></param>
         public void WriteMemory_IsDead(byte value)
         {
-            var targetPointer = Utils.GetMemberPointer(playerInfoOffset_ptr, typeof(PlayerInfo), "IsDead");
+            var targetPointer = Utils.GetMemberPointer(PlayerInfoPTROffset, typeof(PlayerInfo), "IsDead");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "byte", value.ToString());
         }
         /// <summary>
@@ -107,12 +127,23 @@ namespace HamsterCheese.AmongUsMemory
         /// <param name="value"></param>
         public void WriteMemory_KillTimer(float value)
         {
-            var targetPointer = Utils.GetMemberPointer(offset_ptr, typeof(PlayerControl), "killTimer");
+            var targetPointer = Utils.GetMemberPointer(PlayerControllPTR, typeof(PlayerControl), "killTimer");
             Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.ToString());
         }
+        /// <summary>
+        /// Set Player KillTimer
+        /// </summary>
+        /// <param name="value"></param>
+        public void WriteMemory_SetNameTextColor(Color value)
+        {
+            var targetPointer = Utils.GetMemberPointer(Instance.nameText, typeof(TextRenderer), "Color");
+            Cheese.mem.WriteMemory(targetPointer.GetAddress(), "float", value.r.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer + 4).GetAddress(), "float", value.g.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer + 8).GetAddress(), "float", value.b.ToString("0.0"));
+            Cheese.mem.WriteMemory((targetPointer + 12).GetAddress(), "float", value.a.ToString("0.0"));
+        }
+         
 
-        
-        
         public void StopObserveState()
         {
             var key = Tokens.ContainsKey("ObserveState");
@@ -169,7 +200,7 @@ namespace HamsterCheese.AmongUsMemory
 
         public void ReadMemory()
         {
-            Instance = Utils.FromBytes<PlayerControl>(Cheese.mem.ReadBytes(offset_str, Utils.SizeOf<PlayerControl>()));
+            Instance = Utils.FromBytes<PlayerControl>(Cheese.mem.ReadBytes(PlayerControllPTROffset, Utils.SizeOf<PlayerControl>()));
         }
 
         public bool IsLocalPlayer
