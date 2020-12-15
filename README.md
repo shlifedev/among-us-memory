@@ -1,4 +1,7 @@
 # AmongUsMemory
+
+ - If you have latest engineoffset.cs, please create pull request. thanks for your help.
+
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
 **Don't ask me how to draw a radar :)**
