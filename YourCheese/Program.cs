@@ -14,13 +14,21 @@ namespace YourCheese
         static int tableWidth = 75;
 
        
-        static List<PlayerData> playerDatas = new List<PlayerData>(); 
+        static List<PlayerData> playerDatas = new List<PlayerData>();
+        static AmongUsClient client;
+        static ShipStatus ship;
+        static String gamecode;
+        static int meeting_status;
+
         static void UpdateCheat()
         {
-       
             while (true)
             { 
                 Console.Clear();
+                Console.WriteLine($"Game code: {gamecode} (ID {client.GameId})");
+
+                Console.WriteLine($"Game mode: {client.GameMode}, state: {client.GameState}, Meeting state: {meeting_status}");
+
                 Console.WriteLine("Test Read Player Datas..");
                 PrintRow("offset", "Name", "OwnerId", "PlayerId", "spawnid", "spawnflag");
                 PrintLine();
@@ -61,8 +69,10 @@ namespace YourCheese
 
 
                     playerDatas = HamsterCheese.AmongUsMemory.Cheese.GetAllPlayers();
-                    
-                  
+                    client = HamsterCheese.AmongUsMemory.Cheese.GetClient();
+                    ship = HamsterCheese.AmongUsMemory.Cheese.GetShipStatus();
+                    gamecode = HamsterCheese.AmongUsMemory.Cheese.GetGameCode();
+                    meeting_status = HamsterCheese.AmongUsMemory.Cheese.GetMeetingStatus();
                  
                     foreach (var player in playerDatas)
                     {
