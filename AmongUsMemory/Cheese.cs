@@ -121,7 +121,7 @@ namespace HamsterCheese.AmongUsMemory
             return amongUsClient;
         }
 
-        public static String getGameCode()
+        public static String GetGameCode()
         {
             try
             {
@@ -137,7 +137,7 @@ namespace HamsterCheese.AmongUsMemory
             return null;
         }
 
-        public static int getMeetingStatus()
+        public static int GetMeetingStatus()
         {
             try
             {
