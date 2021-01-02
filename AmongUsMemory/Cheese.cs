@@ -41,7 +41,7 @@ namespace HamsterCheese.AmongUsMemory
             {
                 Thread.Sleep(250);
                 shipStatus = Cheese.GetShipStatus();
-                if (prevShipStatus.OwnerId != shipStatus.OwnerId)
+                if (prevShipStatus.OwnerId != shipStatus.OwnerId || (prevShipStatus.OwnerId == shipStatus.OwnerId && shipStatus.Timer > 0f))
                 {
                     prevShipStatus = shipStatus;
                     onChangeShipStatus?.Invoke(shipStatus.Type);
@@ -91,16 +91,64 @@ namespace HamsterCheese.AmongUsMemory
                 ShipStatus resultInst = Utils.FromBytes<ShipStatus>(resultByte); 
                 if (resultInst.AllVents != IntPtr.Zero && resultInst.NetId < uint.MaxValue - 10000)
                 {
-                    if (resultInst.MapScale < 6470545000000 && resultInst.MapScale > 0.1f)
+                    if (resultInst.MapScale < 6470545000000 && resultInst.MapScale > 0) // 0.1f
                     {  
-                        shipStatus = resultInst;  
-                        Console.WriteLine(result.GetAddress());
+                        shipStatus = resultInst;
+                        Console.WriteLine($"ShipStatus selected {result.GetAddress()}");
                     }
                 }
             }  
             return shipStatus;
         }
-         
+
+        public static AmongUsClient GetClient()
+        {
+            AmongUsClient amongUsClient = new AmongUsClient();
+            byte[] clientAob = Cheese.mem.ReadBytes(Pattern.AmongusClient_Pointer, Utils.SizeOf<AmongUsClient>());
+            var aobStr = MakeAobString(clientAob, 4, "00 00 00 00 ?? ?? ?? ??");
+            var aobResults = Cheese.mem.AoBScan(aobStr, true, true);
+            aobResults.Wait();
+            foreach (var result in aobResults.Result)
+            {
+                byte[] resultByte = Cheese.mem.ReadBytes(result.GetAddress(), Utils.SizeOf<ShipStatus>());
+                AmongUsClient resultInst = Utils.FromBytes<AmongUsClient>(resultByte);
+                if (resultInst.connection != IntPtr.Zero && resultInst.GameId != 0 && resultInst.GameState < 1000)
+                {
+                    amongUsClient = resultInst;
+                    Console.WriteLine($"AmongUsClient selected {result.GetAddress()}");
+                }
+            }
+            return amongUsClient;
+        }
+
+        public static String getGameCode()
+        {
+            try
+            {
+                String code_string = Utils.ReadString((IntPtr)mem.ReadInt(Pattern.GameCode_Field_Pointer));
+                return code_string.Split('\n')[1];
+            }
+            catch (NullReferenceException)
+            {
+            }
+            catch (IndexOutOfRangeException)
+            {
+            }
+            return null;
+        }
+
+        public static int getMeetingStatus()
+        {
+            try
+            {
+                return mem.ReadInt(Pattern.MeetingHud_State_Field_Pointer);
+            }
+            catch (NullReferenceException)
+            {
+            }
+            return 0;
+        }
+
 
         public static string MakeAobString(byte[] aobTarget, int length, string unknownText = "?? ?? ?? ??")
         {
