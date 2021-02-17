@@ -4,23 +4,19 @@
 
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
 
-**Don't ask me how to draw a radar :)**
-
 You are responsible for any disadvantages caused by using this src.  
 It only works with the version downloaded from Steam. 
 
-Please use only for study. Do not abuse it! Please!  
-After the game is updated, it will require offset update.  
+Please use only for study. Do not abuse it!   
 
-offset update guide here : https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md  
-it's very easy. does not require il2cpp dumper.  
+When game update require update new offset, offset update guide here! : https://github.com/shlifedev/AmongUsMemory/blob/master/OffsetGuide.md  
+It's very easy. does not require il2cpp dumper.  
 
   ----------------------
 ## How to Use
  1. Download Source Code
  2. Add Reference AmongUsMemory Your Project 
- 3. Now, Let's Write Code!
-  
+ 3. Now, Let's write your code and build project!  
    
 ### Example Start Cheating.
  
@@ -66,15 +62,12 @@ it's very easy. does not require il2cpp dumper.
             System.Threading.Thread.Sleep(1000000);
         }
         
- ``` 
- 
- You can get/set player memory. ex) `IsImposter` `Position` `IsDead` `InVent` ..etc
-
+ ```  
 ## Example Cheat
 
  This is my private cheat :)
  ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG) 
- https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be
+ https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be 
  
   
  
