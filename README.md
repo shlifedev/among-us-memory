@@ -69,5 +69,6 @@ It's very easy. does not require il2cpp dumper.
  ![](https://github.com/shlifedev/AmongUsPublic/blob/master/Example.PNG) 
  https://www.youtube.com/watch?v=Cfk9_wNjEto&feature=youtu.be 
  
-  
+`offset is no longer updated.` 
+`if you have new offset pull request plz.`
  
