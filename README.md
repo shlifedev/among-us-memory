@@ -1,4 +1,4 @@
-# AmongUsMemory
+# AmongUsMemory (Deprecated)
 
  - If you have latest engineoffset.cs, please create pull request. thanks for your help.
 
