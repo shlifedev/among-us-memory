@@ -1,8 +1,8 @@
 # AmongUsMemory (Deprecated)
-
  - If you have latest engineoffset.cs, please create pull request. thanks for your help.
 
 ![image](https://user-images.githubusercontent.com/49047211/91510992-9581fe00-e919-11ea-8be1-93e333de762b.png)
+[blog post](https://blog.shlife.dev/4)
 
 You are responsible for any disadvantages caused by using this src.  
 It only works with the version downloaded from Steam. 
@@ -71,4 +71,5 @@ It's very easy. does not require il2cpp dumper.
  
 `offset is no longer updated.` 
 `if you have new offset pull request plz.`
+ 
  
